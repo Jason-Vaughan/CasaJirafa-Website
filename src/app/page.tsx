@@ -104,7 +104,7 @@ export default function Home() {
               <Image src="/images/CasaJirafaPhotos/Master-Bedroom-1.png" alt="Master Bedroom" fill className="object-cover hover:scale-105 transition-transform duration-500" />
             </div>
             <div className="relative aspect-square rounded-xl overflow-hidden shadow-sm">
-              <Image src="/images/CasaJirafaPhotos/Master-Bath-1.png" alt="Master Bathroom" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+              <Image src="/images/CasaJirafaPhotos/dining-room-table-1.png" alt="Dining Room" fill className="object-cover hover:scale-105 transition-transform duration-500" />
             </div>
             <div className="relative aspect-square rounded-xl overflow-hidden shadow-sm">
               <Image src="/images/CasaJirafaPhotos/Bedroom-2-1.png" alt="Second Bedroom" fill className="object-cover hover:scale-105 transition-transform duration-500" />
@@ -112,6 +112,11 @@ export default function Home() {
             <div className="relative aspect-square rounded-xl overflow-hidden shadow-sm">
               <Image src="/images/CasaJirafaPhotos/Pool-Heated-1.png" alt="Heated Pool" fill className="object-cover hover:scale-105 transition-transform duration-500" />
             </div>
+          </div>
+          <div className="mt-12 text-center">
+            <Link href="/gallery" className="inline-block rounded-full bg-stone-200 px-6 py-3 text-sm font-semibold text-stone-900 hover:bg-stone-300 transition-colors">
+              View Full Gallery
+            </Link>
           </div>
         </div>
       </section>
@@ -145,6 +150,67 @@ export default function Home() {
               <Image src="/images/CasaJirafaPhotos/exterior-drone.png" alt="Drone view of the location" fill className="object-cover" />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Meet Your Hosts */}
+      <section className="py-24 bg-stone-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
+              Meet Your Hosts
+            </h2>
+            <p className="mt-8 text-lg text-stone-600 leading-relaxed">
+              Jason is a professional multimedia engineer and musician. Rosie is a professional makeup artist and beauty consultant. We enjoy travel, good food, great music, fun people, diving, and hiking.
+            </p>
+            <p className="mt-4 text-lg text-stone-600 leading-relaxed">
+              While we work in San Francisco, we love Puerto Vallarta and come here as much as possible. We are happy to share our experience and inside knowledge of the area to make the most of your visit!
+            </p>
+            <div className="mt-8">
+              <span className="inline-flex items-center rounded-full bg-stone-100 px-3 py-1 text-sm font-medium text-stone-800 ring-1 ring-inset ring-stone-500/20">
+                13 Years of Hosting Experience
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Booking / Contact */}
+      <section id="book" className="py-24 bg-stone-900 text-white">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Ready to book your stay?</h2>
+          <p className="mt-4 text-lg text-stone-300 mb-10">
+            Send us a message with your dates and we'll get back to you with availability and our best direct-booking rates.
+          </p>
+          <form className="mt-8 flex flex-col gap-4 text-left max-w-xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-stone-300">Name</label>
+                <input type="text" id="name" name="name" className="mt-1 block w-full rounded-md border-0 bg-stone-800 py-2.5 px-3 text-white shadow-sm ring-1 ring-inset ring-stone-700 focus:ring-2 focus:ring-inset focus:ring-stone-400 sm:text-sm" />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-stone-300">Email</label>
+                <input type="email" id="email" name="email" className="mt-1 block w-full rounded-md border-0 bg-stone-800 py-2.5 px-3 text-white shadow-sm ring-1 ring-inset ring-stone-700 focus:ring-2 focus:ring-inset focus:ring-stone-400 sm:text-sm" />
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="checkin" className="block text-sm font-medium text-stone-300">Check-in</label>
+                <input type="date" id="checkin" name="checkin" className="mt-1 block w-full rounded-md border-0 bg-stone-800 py-2.5 px-3 text-white shadow-sm ring-1 ring-inset ring-stone-700 focus:ring-2 focus:ring-inset focus:ring-stone-400 sm:text-sm [color-scheme:dark]" />
+              </div>
+              <div>
+                <label htmlFor="checkout" className="block text-sm font-medium text-stone-300">Check-out</label>
+                <input type="date" id="checkout" name="checkout" className="mt-1 block w-full rounded-md border-0 bg-stone-800 py-2.5 px-3 text-white shadow-sm ring-1 ring-inset ring-stone-700 focus:ring-2 focus:ring-inset focus:ring-stone-400 sm:text-sm [color-scheme:dark]" />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-stone-300">Message</label>
+              <textarea id="message" name="message" rows={4} className="mt-1 block w-full rounded-md border-0 bg-stone-800 py-2.5 px-3 text-white shadow-sm ring-1 ring-inset ring-stone-700 focus:ring-2 focus:ring-inset focus:ring-stone-400 sm:text-sm" placeholder="Any special requests or questions?"></textarea>
+            </div>
+            <button type="button" className="mt-4 rounded-md bg-white px-3.5 py-3 text-sm font-semibold text-stone-900 shadow-sm hover:bg-stone-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all">
+              Send Inquiry
+            </button>
+          </form>
         </div>
       </section>
 
