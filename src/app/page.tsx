@@ -1,69 +1,153 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <div className="flex flex-col w-full">
+      {/* Hero Section */}
+      <section className="relative w-full h-[70vh] min-h-[500px]">
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src="/images/CasaJirafaPhotos/Exterior-Rooftop-View1.png"
+            alt="View from Casa Jirafa"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/30 mix-blend-multiply" />
+        </div>
+        
+        <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-4 text-center text-white">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight drop-shadow-md">
+            Casa Jirafa
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-4 text-xl md:text-2xl font-medium drop-shadow-md">
+            The Perfect Vallarta Retreat
           </p>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <Link
+              href="#book"
+              className="rounded-full bg-stone-100 text-stone-900 px-8 py-3.5 text-base font-semibold shadow-sm hover:bg-white transition-all"
+            >
+              Book Direct & Save
+            </Link>
+            <Link
+              href="#condo"
+              className="rounded-full border border-white/80 bg-black/20 backdrop-blur-sm px-8 py-3.5 text-base font-semibold text-white hover:bg-black/40 transition-all"
+            >
+              Explore the Condo
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Property Highlights */}
+      <section id="condo" className="py-24 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
+              Comfortable Mexican-Style Living
+            </h2>
+            <p className="mt-4 text-lg text-stone-600">
+              Ideal for longer stays and remote work, Casa Jirafa offers more comfort and value than a typical small 1BR condo. Spread out and feel at home in walkable El Centro.
+            </p>
+          </div>
+
+          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            <div className="flex flex-col items-center">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-stone-100 text-stone-900">
+                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+              </div>
+              <h3 className="mt-6 text-xl font-semibold text-stone-900">Spacious Layout</h3>
+              <p className="mt-2 text-stone-600">2 bedrooms, 2 full baths, full kitchen, and in-unit laundry.</p>
+            </div>
+            
+            <div className="flex flex-col items-center">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-stone-100 text-stone-900">
+                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 11.414 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                </svg>
+              </div>
+              <h3 className="mt-6 text-xl font-semibold text-stone-900">Remote Work Ready</h3>
+              <p className="mt-2 text-stone-600">Fast 80/80 Mbps Wi-Fi with optional Ethernet. A/C in both bedrooms.</p>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-stone-100 text-stone-900">
+                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="mt-6 text-xl font-semibold text-stone-900">Resort Amenities</h3>
+              <p className="mt-2 text-stone-600">Heated pool during winter months. Roku TVs in living room and master.</p>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Basic Gallery Stub */}
+      <section className="py-24 bg-stone-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold tracking-tight text-stone-900 text-center mb-16">
+            A Glimpse Inside
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="relative aspect-square rounded-xl overflow-hidden shadow-sm">
+              <Image src="/images/CasaJirafaPhotos/Living-Room2.png" alt="Living Room" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div className="relative aspect-square rounded-xl overflow-hidden shadow-sm">
+              <Image src="/images/CasaJirafaPhotos/kitchen-1.png" alt="Kitchen" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div className="relative aspect-square rounded-xl overflow-hidden shadow-sm">
+              <Image src="/images/CasaJirafaPhotos/Master-Bedroom-1.png" alt="Master Bedroom" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div className="relative aspect-square rounded-xl overflow-hidden shadow-sm">
+              <Image src="/images/CasaJirafaPhotos/Master-Bath-1.png" alt="Master Bathroom" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div className="relative aspect-square rounded-xl overflow-hidden shadow-sm">
+              <Image src="/images/CasaJirafaPhotos/Bedroom-2-1.png" alt="Second Bedroom" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div className="relative aspect-square rounded-xl overflow-hidden shadow-sm">
+              <Image src="/images/CasaJirafaPhotos/Pool-Heated-1.png" alt="Heated Pool" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Location */}
+      <section id="location" className="py-24 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-stone-900">
+                The Heart of El Centro
+              </h2>
+              <p className="mt-4 text-lg text-stone-600">
+                Casa Jirafa is located just a few blocks from the famous Puerto Vallarta Malecón. 
+                Step outside to find world-class dining, art galleries, and the vibrant local culture 
+                right at your doorstep.
+              </p>
+              <div className="mt-6 rounded-lg bg-stone-100 p-6 border border-stone-200">
+                <h4 className="font-semibold text-stone-900 flex items-center gap-2">
+                  <svg className="w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Note on Mobility
+                </h4>
+                <p className="mt-2 text-stone-600 text-sm">
+                  The walk to the Malecón includes a steep stairway on the final stretch. While it provides our spectacular views, it is something to consider if mobility is a concern.
+                </p>
+              </div>
+            </div>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+              <Image src="/images/CasaJirafaPhotos/exterior-drone.png" alt="Drone view of the location" fill className="object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
