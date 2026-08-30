@@ -65,7 +65,7 @@ export default async function Home() {
                 </svg>
               </div>
               <h3 className="mt-6 text-xl font-semibold text-stone-900">Spacious Layout</h3>
-              <p className="mt-2 text-stone-600">2 bedrooms, 2 full baths, full kitchen, and in-unit laundry.</p>
+              <p className="mt-2 text-stone-600">2 bedrooms, 2 full baths, full kitchen, in-unit laundry, and covered, free parking.</p>
             </div>
             
             <div className="flex flex-col items-center">
