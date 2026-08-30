@@ -1,0 +1,3 @@
+version: 0.1.0
+recorded_at: 2026-08-30T22:30:22Z
+source: package.json
