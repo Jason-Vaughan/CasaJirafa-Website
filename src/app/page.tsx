@@ -6,6 +6,7 @@ import Testimonials from "@/components/Testimonials";
 import Policies from "@/components/Policies";
 import Pricing from "@/components/Pricing";
 import GuidebookCTA from "@/components/GuidebookCTA";
+import MerchSection from "@/components/MerchSection";
 
 export default async function Home() {
   const blockedDates = await getBlockedDates();
@@ -188,6 +189,9 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* Merch Store */}
+      <MerchSection />
 
       {/* Guidebook CTA */}
       <GuidebookCTA />
