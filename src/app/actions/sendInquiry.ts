@@ -15,7 +15,7 @@ export async function sendInquiryAction(formData: FormData) {
       return { success: false, error: "Missing required fields" };
     }
 
-    const { data, error } = await resend.emails.send({
+    const hostEmail = resend.emails.send({
       from: "Casa Jirafa Inquiries <inquiries@casajirafapv.com>", 
       to: ["jason@visualworksav.com"], 
       replyTo: email,
@@ -29,12 +29,33 @@ Message: ${message}
       `,
     });
 
-    if (error) {
-      console.error("Resend error:", error);
-      return { success: false, error: error.message };
+    const guestEmail = resend.emails.send({
+      from: "Casa Jirafa <inquiries@casajirafapv.com>",
+      to: [email],
+      subject: "We received your booking inquiry!",
+      text: `
+Hi ${name.split(" ")[0]},
+
+Thank you for your interest in Casa Jirafa! We have received your booking inquiry for the dates:
+Check-in: ${checkin}
+Check-out: ${checkout}
+
+We are reviewing our availability and will get back to you shortly with next steps and pricing. 
+
+Warm regards,
+Jason & Rosie
+Casa Jirafa
+      `
+    });
+
+    const [hostResponse, guestResponse] = await Promise.all([hostEmail, guestEmail]);
+
+    if (hostResponse.error || guestResponse.error) {
+      console.error("Resend error:", hostResponse.error || guestResponse.error);
+      return { success: false, error: (hostResponse.error || guestResponse.error)?.message };
     }
 
-    return { success: true, data };
+    return { success: true, data: hostResponse.data };
   } catch (error) {
     console.error("Failed to send inquiry:", error);
     return { success: false, error: "Failed to send inquiry" };
