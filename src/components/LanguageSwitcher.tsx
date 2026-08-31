@@ -35,6 +35,9 @@ export default function LanguageSwitcher() {
       // If no locale in path, redirect to /locale
       router.push(`/${locale}${pathname === '/' ? '' : pathname}`);
     }
+    
+    // Force a full re-render from the server so the root layout (Navbar) updates
+    router.refresh();
   };
 
   return (
