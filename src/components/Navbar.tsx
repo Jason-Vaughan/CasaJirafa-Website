@@ -1,9 +1,17 @@
 import Link from "next/link";
+import { cookies } from "next/headers";
 
 import VersionTag from "./VersionTag";
 import FeatureMatrix from "./FeatureMatrix";
 
-export default function Navbar() {
+export default async function Navbar() {
+  const cookieStore = await cookies();
+  const ratesFlag = cookieStore.get('ff_rates')?.value;
+  const showRates = ratesFlag !== '0';
+  
+  const merchFlag = cookieStore.get('ff_merch')?.value;
+  const showMerch = merchFlag !== '0';
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-stone-200 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8 relative">
@@ -21,12 +29,16 @@ export default function Navbar() {
           <Link href="/#location" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
             Location
           </Link>
-          <Link href="/#pricing" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
-            Rates
-          </Link>
-          <Link href="/#merch" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
-            Merch
-          </Link>
+          {showRates && (
+            <Link href="/#pricing" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
+              Rates
+            </Link>
+          )}
+          {showMerch && (
+            <Link href="/#merch" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
+              Merch
+            </Link>
+          )}
           <Link href="/guidebook" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
             Guidebook
           </Link>

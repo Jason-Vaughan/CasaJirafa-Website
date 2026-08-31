@@ -18,6 +18,9 @@ export default async function Home() {
   // Default to true on staging, true on prod unless explicitly disabled (though we wouldn't ship it to prod if we didn't want it)
   const showMerch = merchFlag !== '0';
 
+  const ratesFlag = cookieStore.get('ff_rates')?.value;
+  const showRates = ratesFlag !== '0';
+
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
@@ -207,7 +210,7 @@ export default async function Home() {
       <Testimonials />
 
       {/* Pricing */}
-      <Pricing />
+      {showRates && <Pricing />}
 
       {/* House Rules */}
       <Policies />
