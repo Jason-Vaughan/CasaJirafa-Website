@@ -15,14 +15,30 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value || 'en';
+  const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value;
 
   const locales = ['en', 'es', 'fr'];
   const hasLocale = locales.some(loc => pathname.startsWith(`/${loc}/`) || pathname === `/${loc}`);
 
   // Translations are shipped, always redirect to locale
   if (!hasLocale) {
-    const locale = locales.includes(cookieLocale) ? cookieLocale : 'en';
+    let locale = 'en'; // default
+
+    if (cookieLocale && locales.includes(cookieLocale)) {
+      locale = cookieLocale;
+    } else {
+      // Auto-detect from Accept-Language header
+      const acceptLanguage = request.headers.get('accept-language');
+      if (acceptLanguage) {
+        // e.g. "es-MX,es;q=0.9,en-US;q=0.8" -> try to find "es" or "fr"
+        const preferredLocales = acceptLanguage.split(',').map(lang => lang.split(';')[0].trim().split('-')[0].toLowerCase());
+        const match = preferredLocales.find(lang => locales.includes(lang));
+        if (match) {
+          locale = match;
+        }
+      }
+    }
+    
     return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
   }
 
