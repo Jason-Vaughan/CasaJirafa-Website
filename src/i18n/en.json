@@ -1,0 +1,258 @@
+{
+  "navbar": {
+    "title": "Casa Jirafa",
+    "condo": "The Condo",
+    "location": "Location",
+    "rates": "Rates",
+    "merch": "Merch",
+    "guidebook": "Guidebook",
+    "bookNow": "Book Now"
+  },
+  "hero": {
+    "title": "Casa Jirafa",
+    "subtitle": "The Perfect Vallarta Retreat",
+    "bookDirect": "Book Direct & Save",
+    "checkAvailability": "Check Availability",
+    "exploreCondo": "Explore the Condo"
+  },
+  "condoIntro": {
+    "title": "Comfortable Mexican-Style Living",
+    "description": "Ideal for longer stays and remote work, Casa Jirafa offers more comfort and value than a typical small 1BR condo. Spread out and feel at home in walkable El Centro.",
+    "spacious": {
+      "title": "Spacious Layout",
+      "desc": "2 bedrooms, 2 full baths, full kitchen, in-unit laundry, and covered, free parking."
+    },
+    "remote": {
+      "title": "Remote Work Ready",
+      "desc": "Fast 80/80 Mbps Wi-Fi with optional Ethernet. A/C in both bedrooms."
+    },
+    "amenities": {
+      "title": "Resort Amenities",
+      "desc": "Heated pool during winter months. Roku TVs in living room and master."
+    }
+  },
+  "location": {
+    "title": "The Heart of El Centro",
+    "description": "Casa Jirafa is located just a few blocks from the famous Puerto Vallarta Malecón. Step outside to find world-class dining, art galleries, and the vibrant local culture right at your doorstep.",
+    "mobilityTitle": "Note on Mobility",
+    "mobilityDesc": "The walk to the Malecón includes a steep stairway on the final stretch. While it provides our spectacular views, it is something to consider if mobility is a concern."
+  },
+  "pricing": {
+    "title": "Nightly Rates",
+    "subtitle": "Direct booking saves you up to 15% in platform fees.",
+    "lowSeason": {
+      "title": "Low Season",
+      "months": "May - October",
+      "price": "$125",
+      "unit": "/night"
+    },
+    "highSeason": {
+      "title": "High Season",
+      "months": "November - April",
+      "price": "$185",
+      "unit": "/night"
+    },
+    "holiday": {
+      "title": "Holidays",
+      "months": "Christmas / New Years",
+      "price": "$250",
+      "unit": "/night"
+    },
+    "discounts": {
+      "title": "Discounts & Offers",
+      "saveMore": "Save More",
+      "weekly": {
+        "title": "Weekly Stay",
+        "desc": "7+ nights",
+        "value": "Inquire for discount"
+      },
+      "monthly": {
+        "title": "Monthly Stay",
+        "desc": "28+ nights",
+        "value": "Inquire for discount"
+      },
+      "lastMinute": {
+        "title": "Last Minute",
+        "desc": "Within 7 days",
+        "value": "Inquire for discount"
+      }
+    }
+  },
+  "merch": {
+    "title": "Take Casa Jirafa Home",
+    "subtitle": "Exclusive merchandise for our guests. Available for local pickup or worldwide shipping.",
+    "viewStore": "View Full Store",
+    "items": {
+      "tee": {
+        "name": "Classic Logo Tee",
+        "desc": "100% Organic Cotton",
+        "price": "$25",
+        "button": "Coming Soon"
+      },
+      "mug": {
+        "name": "Morning Coffee Mug",
+        "desc": "Ceramic • 11oz",
+        "price": "$15",
+        "button": "Coming Soon"
+      },
+      "tote": {
+        "name": "Vallarta Beach Tote",
+        "desc": "Heavyweight Canvas",
+        "price": "$30",
+        "button": "Coming Soon"
+      },
+      "slippers": {
+        "name": "Casa Slippers",
+        "desc": "Plush Comfort",
+        "price": "$20",
+        "button": "Coming Soon"
+      },
+      "towel": {
+        "name": "Luxury Beach Towel",
+        "desc": "Oversized • 100% Cotton",
+        "price": "$35",
+        "button": "Coming Soon"
+      }
+    }
+  },
+  "gallery": {
+    "title": "A Glimpse Inside",
+    "viewFull": "View Full Gallery"
+  },
+  "hosts": {
+    "title": "Meet Your Hosts",
+    "p1": "Jason is a professional multimedia engineer and musician. Rosie is a professional makeup artist and beauty consultant. We enjoy travel, good food, great music, fun people, diving, and hiking.",
+    "p2": "While we work in San Francisco, we love Puerto Vallarta and come here as much as possible. We are happy to share our experience and inside knowledge of the area to make the most of your visit!",
+    "badge": "13 Years of Hosting Experience"
+  },
+  "guidebookCTA": {
+    "title": "Unlock Our Insider Guide to PV",
+    "p1": "We've spent years exploring Puerto Vallarta to curate the ultimate digital guidebook for our guests. From the best hidden taco stands and romantic oceanfront dinners, to day-trip adventures and local art galleries—we share all our personal favorites so you can experience PV like a local.",
+    "p2": "It's updated daily and completely free for you to explore before you even book!",
+    "button": "Explore the Guidebook"
+  },
+  "testimonials": {
+    "title": "What Our Guests Say",
+    "subtitle": "Don't just take our word for it. Here is what recent visitors loved about their stay at Casa Jirafa.",
+    "list": [
+      {
+        "quote": "Casa Jirafa was exactly what we were looking for. The views from the rooftop are incredible, and the WiFi was perfectly stable for my remote work meetings.",
+        "author": "Sarah M.",
+        "location": "San Francisco, CA"
+      },
+      {
+        "quote": "Jason and Rosie are fantastic hosts! They provided a massive list of local recommendations that made our first time in Puerto Vallarta unforgettable.",
+        "author": "Michael B.",
+        "location": "Chicago, IL"
+      },
+      {
+        "quote": "Spacious, clean, and right in the heart of El Centro. We loved being able to walk down to the Malecón every evening for dinner, and having the pool was a perfect quiet place to relax and hang out.",
+        "author": "Jessica T.",
+        "location": "Seattle, WA"
+      }
+    ]
+  },
+  "policies": {
+    "title": "House Rules & Policies",
+    "subtitle": "Everything you need to know to ensure a smooth and comfortable stay for you and our neighbors.",
+    "atAGlance": {
+      "title": "At a Glance",
+      "checkin": {
+        "label": "Check-in:",
+        "value": "3:00 PM (Flexible)"
+      },
+      "checkout": {
+        "label": "Check-out:",
+        "value": "Before 11:00 AM"
+      },
+      "guests": {
+        "label": "Guests:",
+        "value": "4 Maximum"
+      },
+      "pets": {
+        "label": "Pets:",
+        "value": "Not allowed"
+      },
+      "events": {
+        "label": "Events:",
+        "value": "Not allowed"
+      },
+      "smoking": {
+        "label": "Smoking:",
+        "value": "No smoking, vaping, or e-cigs"
+      },
+      "quiet": {
+        "label": "Quiet Hours:",
+        "value": "10:00 PM - 8:00 AM"
+      }
+    },
+    "additional": {
+      "title": "Additional Information",
+      "rooftop": {
+        "label": "Rooftop & Pool:",
+        "value": "Rooftop access is available until 9:00 PM (no use after 9 PM). Please, no jumping or diving in the pool."
+      },
+      "neighborhood": {
+        "label": "Neighborhood:",
+        "value": "Please respect our neighbors — this is a small, boutique residential building. No commercial photography or filming allowed."
+      },
+      "manager": {
+        "label": "Onsite Manager:",
+        "value": "Our manager, Lupe, will assist with keys and basic information during your stay."
+      },
+      "cleaning": {
+        "label": "Cleaning:",
+        "value": "Weekly cleaning service is provided. If you'd like to adjust the schedule, please coordinate in advance. Gratuities are appreciated."
+      },
+      "grill": {
+        "label": "Grill:",
+        "value": "The gas grill behind the kitchen is available for guest use. The Smokey Joe charcoal grill must not be used on the property."
+      },
+      "maintenance": {
+        "label": "Maintenance:",
+        "value": "Please report any damage or issues promptly so we can address them quickly."
+      },
+      "checkout": {
+        "label": "Checkout:",
+        "value": "Please place all trash in the garbage can located in the garage before checkout."
+      }
+    }
+  },
+  "booking": {
+    "title": "Ready to book your stay?",
+    "subtitle": "Check our live calendar below for availability. Select your dates on the calendar and we'll automatically fill them into your inquiry.",
+    "formTitle": "Send an Inquiry",
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "checkin": "Check-in",
+      "checkout": "Check-out",
+      "message": "Message"
+    },
+    "placeholders": {
+      "message": "Any special requests or questions?"
+    },
+    "button": {
+      "idle": "Send Inquiry",
+      "sending": "Sending..."
+    },
+    "messages": {
+      "success": "Thanks for your inquiry! We'll get back to you soon.",
+      "error": "Failed to send: ",
+      "unexpected": "An unexpected error occurred. Please try again.",
+      "noDates": "Please select your desired dates on the calendar first!"
+    }
+  },
+  "footer": {
+    "brand": "Casa Jirafa",
+    "description": "Your comfortable Mexican-style condo in the heart of El Centro, Puerto Vallarta.",
+    "planStay": "Plan your stay",
+    "links": {
+      "condo": "The Condo",
+      "guidebook": "Puerto Vallarta Guidebook"
+    },
+    "book": "Book",
+    "checkAvailability": "Check Availability & Book",
+    "rights": "Casa Jirafa. All rights reserved."
+  }
+}

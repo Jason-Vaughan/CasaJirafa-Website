@@ -18,6 +18,34 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 });
 
+
+const mockDict = {
+  title: "Mock Title",
+  subtitle: "Mock Subtitle",
+  formTitle: "Mock Form Title",
+  labels: {
+    name: "Name",
+    email: "Email",
+    checkin: "Checkin",
+    checkout: "Checkout",
+    message: "Message"
+  },
+  placeholders: {
+    message: "Any special requests or questions?"
+  },
+  button: {
+    idle: "Send Inquiry",
+    sending: "Sending..."
+  },
+  messages: {
+    success: "Thanks",
+    error: "Failed to send: ",
+    unexpected: "An unexpected error occurred. Please try again.",
+    noDates: "Please select your desired dates on the calendar first!"
+  }
+};
+
+
 describe('BookingSection', () => {
   beforeEach(() => {
     vi.spyOn(window, 'alert').mockImplementation(() => {});
@@ -25,7 +53,7 @@ describe('BookingSection', () => {
 
   it('shows an alert when trying to submit without dates', async () => {
     const user = userEvent.setup();
-    render(<BookingSection blockedDates={[]} />);
+    render(<BookingSection blockedDates={[]} dict={mockDict} />);
     
     // Fill required HTML5 fields to pass validation
     const nameInput = screen.getByLabelText(/Name/i);
