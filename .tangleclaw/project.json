@@ -55,7 +55,7 @@
   },
   "testCommand": null,
   "lintCommand": null,
-  "lastWrapSha": null,
+  "lastWrapSha": "b7fba4fc78839d21548a74a29bb377af27b7090a",
   "medusaEnabled": true,
   "medusaWake": true,
   "startupRules": [
