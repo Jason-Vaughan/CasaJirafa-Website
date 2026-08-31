@@ -52,51 +52,64 @@ export default function FeatureMatrix() {
   };
 
   return (
-    <div className="relative ml-4">
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-xs font-bold text-indigo-700 shadow-sm hover:bg-indigo-100 transition-colors"
-      >
-        Matrix
-      </button>
+    <>
+      <div className="relative">
+        <button 
+          onClick={() => setIsOpen(true)}
+          className="flex items-center justify-center rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-xs font-bold text-indigo-700 shadow-sm hover:bg-indigo-100 transition-colors"
+        >
+          Matrix
+        </button>
+      </div>
 
       {isOpen && (
-        <div className="absolute left-0 mt-3 w-64 rounded-xl bg-white p-5 shadow-2xl ring-1 ring-black/10 z-50">
-          <h3 className="text-sm font-bold text-stone-900 mb-4 border-b border-stone-100 pb-2">Feature Flags</h3>
+        <>
+          <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[100]" onClick={() => setIsOpen(false)} />
           
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-stone-700">Merch Store</span>
-              <button
-                onClick={toggleMerch}
-                className={`relative inline-flex h-5 w-9 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${merchEnabled ? 'bg-[#c54b34]' : 'bg-stone-300'}`}
-              >
-                <span className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${merchEnabled ? 'translate-x-4' : 'translate-x-0'}`} />
+          <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10 z-[101]">
+            <div className="flex items-center justify-between border-b border-stone-100 pb-3 mb-5">
+              <h3 className="text-base font-bold text-stone-900">Feature Flags</h3>
+              <button onClick={() => setIsOpen(false)} className="text-stone-400 hover:text-stone-600 transition-colors">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
               </button>
             </div>
+            
+            <div className="flex flex-col gap-5">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-medium text-stone-700">Merch Store</span>
+                <button
+                  onClick={toggleMerch}
+                  className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${merchEnabled ? 'bg-[#c54b34]' : 'bg-stone-300'}`}
+                >
+                  <span className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${merchEnabled ? 'translate-x-5' : 'translate-x-0'}`} />
+                </button>
+              </div>
 
-            <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-stone-700">Pricing / Rates</span>
-              <button
-                onClick={toggleRates}
-                className={`relative inline-flex h-5 w-9 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${ratesEnabled ? 'bg-[#c54b34]' : 'bg-stone-300'}`}
-              >
-                <span className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${ratesEnabled ? 'translate-x-4' : 'translate-x-0'}`} />
-              </button>
-            </div>
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-medium text-stone-700">Pricing / Rates</span>
+                <button
+                  onClick={toggleRates}
+                  className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${ratesEnabled ? 'bg-[#c54b34]' : 'bg-stone-300'}`}
+                >
+                  <span className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${ratesEnabled ? 'translate-x-5' : 'translate-x-0'}`} />
+                </button>
+              </div>
 
-            <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-stone-700">Translations</span>
-              <button
-                onClick={toggleTranslations}
-                className={`relative inline-flex h-5 w-9 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${translationsEnabled ? 'bg-[#c54b34]' : 'bg-stone-300'}`}
-              >
-                <span className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${translationsEnabled ? 'translate-x-4' : 'translate-x-0'}`} />
-              </button>
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-medium text-stone-700">Translations</span>
+                <button
+                  onClick={toggleTranslations}
+                  className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${translationsEnabled ? 'bg-[#c54b34]' : 'bg-stone-300'}`}
+                >
+                  <span className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${translationsEnabled ? 'translate-x-5' : 'translate-x-0'}`} />
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
-    </div>
+    </>
   );
 }
