@@ -15,14 +15,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const baseUrl = 'https://stage.casajirafapv.com';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://casajirafapv.com'),
+  metadataBase: new URL(baseUrl),
   title: "Casa Jirafa | Puerto Vallarta Vacation Rental",
   description: "A comfortable Mexican-style condo in walkable El Centro, Puerto Vallarta. Ideal for longer stays and remote work.",
   openGraph: {
     title: "Casa Jirafa | Puerto Vallarta",
     description: "The perfect Vallarta retreat in the heart of El Centro.",
-    url: 'https://casajirafapv.com',
+    url: baseUrl,
     siteName: 'Casa Jirafa',
     locale: 'en_US',
     type: 'website',
