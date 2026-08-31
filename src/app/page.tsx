@@ -37,7 +37,7 @@ export default async function Home() {
             </Link>
             <Link
               href="#book"
-              className="rounded-full bg-stone-900/80 backdrop-blur-sm text-white px-8 py-3.5 text-base font-semibold shadow-sm hover:bg-stone-900 transition-all border border-stone-700/50"
+              className="rounded-full bg-[#c54b34] text-white px-8 py-3.5 text-base font-semibold shadow-sm hover:bg-[#a63f2b] transition-all border border-[#a63f2b]"
             >
               Check Availability
             </Link>
