@@ -78,35 +78,22 @@ body {
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
-/* X marks for disabled days (using pseudo-element) */
+/* X marks for disabled days (using standard text-decoration for browser compatibility) */
 button.casa-booked-day {
   color: #a8a29e !important;
   opacity: 1 !important;
   pointer-events: auto !important; /* Allow hovering so the tooltip works! */
   cursor: not-allowed !important;
-}
-
-button.casa-booked-day:not(.rdp-day_outside):not(.rdp-outside)::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 15%;
-  width: 70%;
-  height: 2px;
-  background-color: #c54b34;
-  transform: translateY(-50%) rotate(-45deg);
-  pointer-events: none;
-  z-index: 10;
+  text-decoration: line-through !important;
+  text-decoration-color: #c54b34 !important;
+  text-decoration-thickness: 3px !important;
 }
 
 /* Clean up outside days */
 .rdp-day_outside, .rdp-outside {
   opacity: 0.2 !important;
   pointer-events: none !important;
-}
-.rdp-day_outside::before, .rdp-outside::before,
-.rdp-day_outside::after, .rdp-outside::after {
-  display: none !important;
+  text-decoration: none !important;
 }
 
 @media (max-width: 768px) {
