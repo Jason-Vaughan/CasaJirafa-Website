@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getBlockedDates } from "@/lib/calendar";
 import BookingSection from "@/components/BookingSection";
 import Testimonials from "@/components/Testimonials";
+import Policies from "@/components/Policies";
 
 export default async function Home() {
   const blockedDates = await getBlockedDates();
@@ -188,6 +189,9 @@ export default async function Home() {
 
       {/* Guest Reviews */}
       <Testimonials />
+
+      {/* House Rules */}
+      <Policies />
 
       {/* Booking / Contact */}
       <BookingSection blockedDates={blockedDates} />
