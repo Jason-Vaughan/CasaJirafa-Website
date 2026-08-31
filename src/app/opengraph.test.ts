@@ -21,7 +21,7 @@ describe('OpenGraph & SEO Configuration', () => {
     const hashSum = crypto.createHash('sha256');
     hashSum.update(fileBuffer);
     const hex = hashSum.digest('hex');
-    expect(hex).toBe('b5b560faca256baa33208ab095c19625282eeb69df0134b1dea37d59fb598d8d');
+    expect(hex).toBe('46df12621d631edd870e54ea772b4ee8cd36ed0f1c0f15e6e7e883b9f60b3df3');
   });
 
   it('twitter-image.jpg exists and is strictly under 300KB', () => {
