@@ -19,6 +19,9 @@ export default function Navbar() {
           <Link href="/#location" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
             Location
           </Link>
+          <Link href="/#pricing" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
+            Rates
+          </Link>
           <Link href="/guidebook" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
             Guidebook
           </Link>
