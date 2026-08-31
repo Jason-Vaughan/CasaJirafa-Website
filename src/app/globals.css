@@ -43,7 +43,7 @@ body {
 }
 
 /* Available Tooltip */
-.rdp-day:not(.rdp-day_disabled):not(.rdp-day_outside):hover::after {
+.rdp-day:not(.casa-booked-day):not(.rdp-day_outside):not(.rdp-outside):hover::after {
   content: 'Available';
   position: absolute;
   bottom: 100%;
@@ -61,7 +61,7 @@ body {
 }
 
 /* Not Available Tooltip */
-.rdp-day_disabled:not(.rdp-day_outside):hover::after {
+.casa-booked-day:not(.rdp-day_outside):not(.rdp-outside):hover::after {
   content: 'Not Available';
   position: absolute;
   bottom: 100%;
@@ -79,14 +79,14 @@ body {
 }
 
 /* X marks for disabled days (using pseudo-element) */
-button.rdp-day_disabled {
+button.casa-booked-day {
   color: #a8a29e !important;
   opacity: 1 !important;
   pointer-events: auto !important; /* Allow hovering so the tooltip works! */
   cursor: not-allowed !important;
 }
 
-button.rdp-day_disabled:not(.rdp-day_outside)::before {
+button.casa-booked-day:not(.rdp-day_outside):not(.rdp-outside)::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -100,12 +100,12 @@ button.rdp-day_disabled:not(.rdp-day_outside)::before {
 }
 
 /* Clean up outside days */
-.rdp-day_outside {
+.rdp-day_outside, .rdp-outside {
   opacity: 0.2 !important;
   pointer-events: none !important;
 }
-.rdp-day_outside::before,
-.rdp-day_outside::after {
+.rdp-day_outside::before, .rdp-outside::before,
+.rdp-day_outside::after, .rdp-outside::after {
   display: none !important;
 }
 
