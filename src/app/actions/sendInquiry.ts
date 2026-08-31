@@ -18,6 +18,7 @@ export async function sendInquiryAction(formData: FormData) {
     const hostEmail = resend.emails.send({
       from: "Casa Jirafa Inquiries <inquiries@casajirafapv.com>", 
       to: ["jason@visualworksav.com"], 
+      cc: ["rosie19.rd@gmail.com"],
       replyTo: email,
       subject: `New Booking Inquiry from ${name} (${checkin} to ${checkout})`,
       text: `
@@ -41,6 +42,9 @@ Check-in: ${checkin}
 Check-out: ${checkout}
 
 We are reviewing our availability and will get back to you shortly with next steps and pricing. 
+
+For your records, here is a copy of your message:
+"${message}"
 
 Warm regards,
 Jason & Rosie
