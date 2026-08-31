@@ -81,6 +81,58 @@ export default function MerchSection() {
             </div>
           </div>
 
+          {/* Merch Item 4 */}
+          <div className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200 transition-all hover:shadow-md">
+            <div className="relative aspect-square bg-stone-50 overflow-hidden flex items-center justify-center p-8 gap-4">
+              {/* Slippers Placeholder */}
+              <div className="w-16 h-32 bg-white rounded-t-[3rem] rounded-b-[2rem] shadow-sm ring-1 ring-stone-200 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute top-10 w-full h-12 bg-[#c54b34]/10 border-t border-b border-[#c54b34]/20 flex items-center justify-center">
+                  <span className="text-[#c54b34] text-xs font-bold">CJ</span>
+                </div>
+              </div>
+              <div className="w-16 h-32 bg-white rounded-t-[3rem] rounded-b-[2rem] shadow-sm ring-1 ring-stone-200 flex items-center justify-center relative overflow-hidden transform translate-y-4">
+                <div className="absolute top-10 w-full h-12 bg-[#c54b34]/10 border-t border-b border-[#c54b34]/20 flex items-center justify-center">
+                  <span className="text-[#c54b34] text-xs font-bold">CJ</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-1 flex-col p-6 text-center">
+              <h3 className="text-lg font-semibold text-stone-900">Casa Slippers</h3>
+              <p className="mt-1 text-sm text-stone-500">Plush Comfort</p>
+              <div className="mt-4 flex items-center justify-center gap-4">
+                <span className="text-lg font-bold text-[#c54b34]">$20</span>
+                <button className="rounded-full bg-stone-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-stone-800">
+                  Coming Soon
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Merch Item 5 */}
+          <div className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200 transition-all hover:shadow-md">
+            <div className="relative aspect-square bg-stone-50 overflow-hidden flex items-center justify-center p-8">
+              {/* Towel Placeholder */}
+              <div className="w-48 h-32 bg-white shadow-md border-b-4 border-r-4 border-stone-200 rounded-sm relative overflow-hidden flex flex-col justify-between">
+                 {/* Stripes */}
+                 <div className="w-full h-4 bg-[#c54b34]"></div>
+                 <div className="flex-1 flex items-center justify-center">
+                    <Image src="/casa-jirafa-logo.png" alt="Logo" width={80} height={80} className="w-16 h-16 object-contain opacity-60" />
+                 </div>
+                 <div className="w-full h-4 bg-[#c54b34]"></div>
+              </div>
+            </div>
+            <div className="flex flex-1 flex-col p-6 text-center">
+              <h3 className="text-lg font-semibold text-stone-900">Luxury Beach Towel</h3>
+              <p className="mt-1 text-sm text-stone-500">Oversized • 100% Cotton</p>
+              <div className="mt-4 flex items-center justify-center gap-4">
+                <span className="text-lg font-bold text-[#c54b34]">$35</span>
+                <button className="rounded-full bg-stone-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-stone-800">
+                  Coming Soon
+                </button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
