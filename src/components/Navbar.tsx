@@ -15,12 +15,10 @@ export default async function Navbar() {
   const merchFlag = cookieStore.get('ff_merch')?.value;
   const showMerch = merchFlag !== '0';
 
-  const translationsFlag = cookieStore.get('ff_translations')?.value;
-  const showTranslations = translationsFlag === '1';
 
   const locale = (cookieStore.get('NEXT_LOCALE')?.value as Locale) || 'en';
   const dict = await getDictionary(locale);
-  const basePath = showTranslations ? `/${locale}` : '';
+  const basePath = `/${locale}`;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-stone-200 bg-white/80 backdrop-blur-md">
@@ -60,7 +58,7 @@ export default async function Navbar() {
         
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-4 z-10">
-          {showTranslations && <LanguageSwitcher />}
+          <LanguageSwitcher />
           <Link
             href={`${basePath}/#book`}
             className="rounded-full bg-stone-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-stone-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900 transition-all"
@@ -74,7 +72,7 @@ export default async function Navbar() {
           dict={dict} 
           showRates={showRates} 
           showMerch={showMerch} 
-          showTranslations={showTranslations} basePath={basePath} 
+           basePath={basePath} 
         />
       </div>
     </header>

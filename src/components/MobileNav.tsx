@@ -8,16 +8,15 @@ interface MobileNavProps {
   dict: any; // eslint-disable-line @typescript-eslint/no-explicit-any
   showRates: boolean;
   showMerch: boolean;
-  showTranslations: boolean;
   basePath?: string;
 }
 
-export default function MobileNav({ dict, showRates, showMerch, showTranslations, basePath = "" }: MobileNavProps) {
+export default function MobileNav({ dict, showRates, showMerch, basePath = "" }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="md:hidden flex items-center gap-3">
-      {showTranslations && <LanguageSwitcher />}
+    <div className="md:hidden flex items-center gap-4 z-10">
+      <LanguageSwitcher />
       
       <button 
         onClick={() => setIsOpen(!isOpen)}
