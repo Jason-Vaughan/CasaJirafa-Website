@@ -45,7 +45,7 @@ export default function BookingSection({ blockedDates }: BookingSectionProps) {
       } else {
         setStatusMsg("Failed to send: " + result.error);
       }
-    } catch (err) {
+    } catch {
       setStatusMsg("An unexpected error occurred. Please try again.");
     } finally {
       setIsPending(false);
@@ -58,7 +58,7 @@ export default function BookingSection({ blockedDates }: BookingSectionProps) {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Ready to book your stay?</h2>
           <p className="mt-4 text-lg text-stone-300">
-            Check our live calendar below for availability. Select your dates on the calendar and we'll automatically fill them into your inquiry.
+            Check our live calendar below for availability. Select your dates on the calendar and we&apos;ll automatically fill them into your inquiry.
           </p>
         </div>
         

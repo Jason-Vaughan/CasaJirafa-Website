@@ -35,7 +35,7 @@ Message: ${message}
     }
 
     return { success: true, data };
-  } catch (error: any) {
+  } catch (error) {
     console.error("Failed to send inquiry:", error);
     return { success: false, error: "Failed to send inquiry" };
   }
