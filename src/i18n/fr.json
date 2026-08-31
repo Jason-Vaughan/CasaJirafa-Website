@@ -1,0 +1,67 @@
+{
+  "navbar": {
+    "title": "Casa Jirafa",
+    "condo": "L'Appartement",
+    "location": "Emplacement",
+    "rates": "Tarifs",
+    "merch": "Boutique",
+    "guidebook": "Guide",
+    "bookNow": "Réserver"
+  },
+  "hero": {
+    "title": "Casa Jirafa",
+    "subtitle": "La Retraite Parfaite à Vallarta",
+    "bookDirect": "Réservez en Direct et Économisez",
+    "checkAvailability": "Vérifier la Disponibilité",
+    "exploreCondo": "Explorer l'Appartement"
+  },
+  "condoIntro": {
+    "title": "Confort de Style Mexicain",
+    "description": "Idéal pour les longs séjours et le télétravail, Casa Jirafa offre plus de confort et de valeur qu'un petit appartement typique d'une chambre. Prenez vos aises et sentez-vous chez vous dans le centre-ville accessible à pied.",
+    "spacious": {
+      "title": "Agencement Spacieux",
+      "desc": "2 chambres, 2 salles de bain complètes, cuisine équipée, buanderie intégrée et parking couvert gratuit."
+    },
+    "remote": {
+      "title": "Prêt pour le Télétravail",
+      "desc": "Wi-Fi rapide 80/80 Mbps avec Ethernet en option. Climatisation dans les deux chambres."
+    },
+    "amenities": {
+      "title": "Commodités de Complexe",
+      "desc": "Piscine chauffée pendant les mois d'hiver. Téléviseurs Roku dans le salon et la chambre principale."
+    }
+  },
+  "location": {
+    "title": "Le Cœur de El Centro",
+    "description": "Casa Jirafa est situé à quelques pâtés de maisons du célèbre Malecón de Puerto Vallarta. Sortez pour trouver des restaurants de classe mondiale, des galeries d'art et la vibrante culture locale juste à votre porte.",
+    "mobilityTitle": "Note sur la Mobilité",
+    "mobilityDesc": "Le chemin vers le Malecón comprend un escalier raide sur le dernier tronçon. Bien qu'il offre nos vues spectaculaires, c'est un point à considérer si la mobilité est une préoccupation."
+  },
+  "pricing": {
+    "title": "Tarifs par Nuit",
+    "subtitle": "La réservation directe vous fait économiser jusqu'à 15 % en frais de plateforme.",
+    "lowSeason": {
+      "title": "Basse Saison",
+      "months": "Mai - Octobre",
+      "price": "125 $",
+      "unit": "/nuit"
+    },
+    "highSeason": {
+      "title": "Haute Saison",
+      "months": "Novembre - Avril",
+      "price": "185 $",
+      "unit": "/nuit"
+    },
+    "holiday": {
+      "title": "Jours Fériés",
+      "months": "Noël / Nouvel An",
+      "price": "250 $",
+      "unit": "/nuit"
+    }
+  },
+  "merch": {
+    "title": "Ramenez Casa Jirafa à la Maison",
+    "subtitle": "Marchandise exclusive pour nos invités. Disponible pour retrait sur place ou expédition internationale.",
+    "viewStore": "Voir Toute la Boutique"
+  }
+}

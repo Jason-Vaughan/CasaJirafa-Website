@@ -8,6 +8,7 @@ export default function FeatureMatrix() {
   const [isStaging, setIsStaging] = useState(false);
   const [merchEnabled, setMerchEnabled] = useState(true);
   const [ratesEnabled, setRatesEnabled] = useState(true);
+  const [i18nEnabled, setI18nEnabled] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -20,6 +21,9 @@ export default function FeatureMatrix() {
       
       const ratesMatch = document.cookie.match(new RegExp('(^| )ff_rates=([^;]+)'));
       setRatesEnabled(ratesMatch ? ratesMatch[2] !== "0" : true);
+
+      const i18nMatch = document.cookie.match(new RegExp('(^| )ff_i18n=([^;]+)'));
+      setI18nEnabled(i18nMatch ? i18nMatch[2] === "1" : false);
     }
   }, []);
 
@@ -36,6 +40,13 @@ export default function FeatureMatrix() {
     const newState = !ratesEnabled;
     setRatesEnabled(newState);
     document.cookie = `ff_rates=${newState ? "1" : "0"}; path=/; max-age=31536000`;
+    router.refresh();
+  };
+
+  const toggleI18n = () => {
+    const newState = !i18nEnabled;
+    setI18nEnabled(newState);
+    document.cookie = `ff_i18n=${newState ? "1" : "0"}; path=/; max-age=31536000`;
     router.refresh();
   };
 
@@ -70,6 +81,16 @@ export default function FeatureMatrix() {
                 className={`relative inline-flex h-5 w-9 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${ratesEnabled ? 'bg-[#c54b34]' : 'bg-stone-300'}`}
               >
                 <span className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${ratesEnabled ? 'translate-x-4' : 'translate-x-0'}`} />
+              </button>
+            </div>
+
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-stone-700">i18n</span>
+              <button
+                onClick={toggleI18n}
+                className={`relative inline-flex h-5 w-9 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${i18nEnabled ? 'bg-[#c54b34]' : 'bg-stone-300'}`}
+              >
+                <span className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${i18nEnabled ? 'translate-x-4' : 'translate-x-0'}`} />
               </button>
             </div>
           </div>

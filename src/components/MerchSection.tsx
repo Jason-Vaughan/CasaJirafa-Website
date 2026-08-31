@@ -1,16 +1,21 @@
 import Image from "next/image";
-import Link from "next/link";
+import { cookies } from "next/headers";
+import { getDictionary, Locale } from "@/i18n/dictionaries";
 
-export default function MerchSection() {
+export default async function MerchSection() {
+  const cookieStore = await cookies();
+  const locale = (cookieStore.get('NEXT_LOCALE')?.value as Locale) || 'en';
+  const dict = await getDictionary(locale);
+
   return (
     <section id="merch" className="py-24 bg-stone-100">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
-            Take Casa Jirafa Home
+            {dict.merch.title}
           </h2>
           <p className="mt-4 text-lg text-stone-600">
-            Love the vibe? Grab some exclusive Casa Jirafa merchandise to remember your stay in Puerto Vallarta.
+            {dict.merch.subtitle}
           </p>
         </div>
 

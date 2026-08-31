@@ -8,6 +8,7 @@ import Policies from "@/components/Policies";
 import Pricing from "@/components/Pricing";
 import GuidebookCTA from "@/components/GuidebookCTA";
 import MerchSection from "@/components/MerchSection";
+import { getDictionary, Locale } from "@/i18n/dictionaries";
 
 export default async function Home() {
   const blockedDates = await getBlockedDates();
@@ -20,6 +21,9 @@ export default async function Home() {
 
   const ratesFlag = cookieStore.get('ff_rates')?.value;
   const showRates = ratesFlag !== '0';
+
+  const locale = (cookieStore.get('NEXT_LOCALE')?.value as Locale) || 'en';
+  const dict = await getDictionary(locale);
 
   return (
     <div className="flex flex-col w-full">
@@ -38,29 +42,29 @@ export default async function Home() {
         
         <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-4 text-center text-white">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight drop-shadow-md">
-            Casa Jirafa
+            {dict.hero.title}
           </h1>
           <p className="mt-4 text-xl md:text-2xl font-medium drop-shadow-md">
-            The Perfect Vallarta Retreat
+            {dict.hero.subtitle}
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <a
               href="#book"
               className="rounded-full bg-stone-100 text-stone-900 px-8 py-3.5 text-base font-semibold shadow-sm hover:bg-white transition-all"
             >
-              Book Direct & Save
+              {dict.hero.bookDirect}
             </a>
             <a
               href="#book"
               className="rounded-full bg-[#c54b34] text-white px-8 py-3.5 text-base font-semibold shadow-sm hover:bg-[#a63f2b] transition-all border border-[#a63f2b]"
             >
-              Check Availability
+              {dict.hero.checkAvailability}
             </a>
             <a
               href="#condo"
               className="rounded-full border border-white/80 bg-black/20 backdrop-blur-sm px-8 py-3.5 text-base font-semibold text-white hover:bg-black/40 transition-all"
             >
-              Explore the Condo
+              {dict.hero.exploreCondo}
             </a>
           </div>
         </div>
@@ -71,10 +75,10 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
-              Comfortable Mexican-Style Living
+              {dict.condoIntro.title}
             </h2>
             <p className="mt-4 text-lg text-stone-600">
-              Ideal for longer stays and remote work, Casa Jirafa offers more comfort and value than a typical small 1BR condo. Spread out and feel at home in walkable El Centro.
+              {dict.condoIntro.description}
             </p>
           </div>
 
@@ -152,22 +156,20 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-stone-900">
-                The Heart of El Centro
+                {dict.location.title}
               </h2>
               <p className="mt-4 text-lg text-stone-600">
-                Casa Jirafa is located just a few blocks from the famous Puerto Vallarta Malecón. 
-                Step outside to find world-class dining, art galleries, and the vibrant local culture 
-                right at your doorstep.
+                {dict.location.description}
               </p>
               <div className="mt-6 rounded-lg bg-stone-100 p-6 border border-stone-200">
                 <h4 className="font-semibold text-stone-900 flex items-center gap-2">
                   <svg className="w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  Note on Mobility
+                  {dict.location.mobilityTitle}
                 </h4>
                 <p className="mt-2 text-stone-600 text-sm">
-                  The walk to the Malecón includes a steep stairway on the final stretch. While it provides our spectacular views, it is something to consider if mobility is a concern.
+                  {dict.location.mobilityDesc}
                 </p>
               </div>
             </div>
