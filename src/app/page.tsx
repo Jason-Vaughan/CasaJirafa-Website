@@ -4,7 +4,6 @@ import { getBlockedDates } from "@/lib/calendar";
 import BookingSection from "@/components/BookingSection";
 import Testimonials from "@/components/Testimonials";
 import Policies from "@/components/Policies";
-import Pricing from "@/components/Pricing";
 import GuidebookCTA from "@/components/GuidebookCTA";
 
 export default async function Home() {
@@ -194,9 +193,6 @@ export default async function Home() {
 
       {/* Guest Reviews */}
       <Testimonials />
-
-      {/* Pricing */}
-      <Pricing />
 
       {/* House Rules */}
       <Policies />
