@@ -2,18 +2,20 @@
 import { useEffect, useState } from 'react';
 
 export default function VersionTag() {
-  const [show, setShow] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const hostname = window.location.hostname;
-    if (
-      hostname.includes('stage') || 
-      hostname.includes('vercel.app') || 
-      hostname === 'localhost'
-    ) {
-      setShow(true);
-    }
+    const timer = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(timer);
   }, []);
+
+  if (!mounted) return null;
+
+  const hostname = window.location.hostname;
+  const show = 
+    hostname.includes('stage') || 
+    hostname.includes('vercel.app') || 
+    hostname === 'localhost';
 
   if (!show) return null;
 
