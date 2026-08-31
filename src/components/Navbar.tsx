@@ -13,23 +13,23 @@ export default function Navbar() {
           </span>
         </div>
         <nav className="hidden space-x-8 md:flex">
-          <Link href="/#condo" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
+          <a href="/#condo" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
             The Condo
-          </Link>
-          <Link href="/#location" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
+          </a>
+          <a href="/#location" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
             Location
-          </Link>
+          </a>
           <Link href="/guidebook" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
             Guidebook
           </Link>
         </nav>
         <div className="flex items-center">
-          <Link
+          <a
             href="/#book"
             className="rounded-full bg-stone-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-stone-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900 transition-all"
           >
             Book Now
-          </Link>
+          </a>
         </div>
       </div>
     </header>

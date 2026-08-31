@@ -29,24 +29,24 @@ export default async function Home() {
             The Perfect Vallarta Retreat
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <Link
+            <a
               href="#book"
               className="rounded-full bg-stone-100 text-stone-900 px-8 py-3.5 text-base font-semibold shadow-sm hover:bg-white transition-all"
             >
               Book Direct & Save
-            </Link>
-            <Link
+            </a>
+            <a
               href="#book"
               className="rounded-full bg-[#c54b34] text-white px-8 py-3.5 text-base font-semibold shadow-sm hover:bg-[#a63f2b] transition-all border border-[#a63f2b]"
             >
               Check Availability
-            </Link>
-            <Link
+            </a>
+            <a
               href="#condo"
               className="rounded-full border border-white/80 bg-black/20 backdrop-blur-sm px-8 py-3.5 text-base font-semibold text-white hover:bg-black/40 transition-all"
             >
               Explore the Condo
-            </Link>
+            </a>
           </div>
         </div>
       </section>
