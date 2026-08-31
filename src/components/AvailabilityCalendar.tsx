@@ -1,14 +1,16 @@
 "use client";
 
-import { DayPicker } from "react-day-picker";
+import { DayPicker, DateRange } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { BlockedDateRange } from "@/lib/calendar";
 
 interface CalendarProps {
   blockedRanges: BlockedDateRange[];
+  selectedRange?: DateRange;
+  onSelectRange?: (range: DateRange | undefined) => void;
 }
 
-export default function AvailabilityCalendar({ blockedRanges }: CalendarProps) {
+export default function AvailabilityCalendar({ blockedRanges, selectedRange, onSelectRange }: CalendarProps) {
   // Convert our {start, end} ranges to the {from, to} format react-day-picker expects
   const disabledDates = blockedRanges.map((range) => ({
     from: new Date(range.start),
@@ -85,9 +87,11 @@ export default function AvailabilityCalendar({ blockedRanges }: CalendarProps) {
         }
       `}</style>
       <DayPicker
-        mode="multiple"
+        mode="range"
         numberOfMonths={2}
         disabled={disabledDates}
+        selected={selectedRange}
+        onSelect={onSelectRange}
         showOutsideDays
         fixedWeeks
       />
