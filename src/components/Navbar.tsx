@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import VersionTag from "./VersionTag";
+import FeatureMatrix from "./FeatureMatrix";
 
 export default function Navbar() {
   return (
@@ -11,6 +12,7 @@ export default function Navbar() {
             Casa Jirafa
           </Link>
           <VersionTag />
+          <FeatureMatrix />
         </div>
         <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-8">
           <Link href="/#condo" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">

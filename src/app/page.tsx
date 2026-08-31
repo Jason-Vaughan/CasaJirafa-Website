@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getBlockedDates } from "@/lib/calendar";
+import { cookies } from "next/headers";
 import BookingSection from "@/components/BookingSection";
 import Testimonials from "@/components/Testimonials";
 import Policies from "@/components/Policies";
@@ -10,6 +11,12 @@ import MerchSection from "@/components/MerchSection";
 
 export default async function Home() {
   const blockedDates = await getBlockedDates();
+  
+  // Read feature flags
+  const cookieStore = await cookies();
+  const merchFlag = cookieStore.get('ff_merch')?.value;
+  // Default to true on staging, true on prod unless explicitly disabled (though we wouldn't ship it to prod if we didn't want it)
+  const showMerch = merchFlag !== '0';
 
   return (
     <div className="flex flex-col w-full">
@@ -191,7 +198,7 @@ export default async function Home() {
       </section>
 
       {/* Merch Store */}
-      <MerchSection />
+      {showMerch && <MerchSection />}
 
       {/* Guidebook CTA */}
       <GuidebookCTA />
