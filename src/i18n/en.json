@@ -63,5 +63,15 @@
     "title": "Take Casa Jirafa Home",
     "subtitle": "Exclusive merchandise for our guests. Available for local pickup or worldwide shipping.",
     "viewStore": "View Full Store"
+  },
+  "gallery": {
+    "title": "A Glimpse Inside",
+    "viewFull": "View Full Gallery"
+  },
+  "hosts": {
+    "title": "Meet Your Hosts",
+    "p1": "Jason is a professional multimedia engineer and musician. Rosie is a professional makeup artist and beauty consultant. We enjoy travel, good food, great music, fun people, diving, and hiking.",
+    "p2": "While we work in San Francisco, we love Puerto Vallarta and come here as much as possible. We are happy to share our experience and inside knowledge of the area to make the most of your visit!",
+    "badge": "13 Years of Hosting Experience"
   }
 }

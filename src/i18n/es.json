@@ -63,5 +63,15 @@
     "title": "Lleva Casa Jirafa a Casa",
     "subtitle": "Mercancía exclusiva para nuestros huéspedes. Disponible para recogida local o envío mundial.",
     "viewStore": "Ver Tienda Completa"
+  },
+  "gallery": {
+    "title": "Un Vistazo al Interior",
+    "viewFull": "Ver Galería Completa"
+  },
+  "hosts": {
+    "title": "Conoce a tus Anfitriones",
+    "p1": "Jason es ingeniero multimedia profesional y músico. Rosie es maquilladora profesional y asesora de belleza. Disfrutamos viajar, la buena comida, buena música, gente divertida, el buceo y el senderismo.",
+    "p2": "Aunque trabajamos en San Francisco, nos encanta Puerto Vallarta y venimos lo más posible. ¡Estaremos encantados de compartir nuestra experiencia y conocimiento de la zona para que aproveches tu visita al máximo!",
+    "badge": "13 Años de Experiencia como Anfitriones"
   }
 }

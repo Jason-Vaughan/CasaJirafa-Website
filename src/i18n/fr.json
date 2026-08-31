@@ -63,5 +63,15 @@
     "title": "Ramenez Casa Jirafa à la Maison",
     "subtitle": "Marchandise exclusive pour nos invités. Disponible pour retrait sur place ou expédition internationale.",
     "viewStore": "Voir Toute la Boutique"
+  },
+  "gallery": {
+    "title": "Un Aperçu à L'intérieur",
+    "viewFull": "Voir la Galerie Complète"
+  },
+  "hosts": {
+    "title": "Rencontrez vos Hôtes",
+    "p1": "Jason est un ingénieur multimédia professionnel et musicien. Rosie est maquilleuse professionnelle et conseillère en beauté. Nous aimons voyager, la bonne nourriture, la bonne musique, les gens amusants, la plongée et la randonnée.",
+    "p2": "Bien que nous travaillions à San Francisco, nous adorons Puerto Vallarta et y venons le plus souvent possible. Nous serons ravis de partager notre expérience et nos connaissances de la région pour que vous profitiez au maximum de votre visite !",
+    "badge": "13 Ans d'Expérience d'Hébergement"
   }
 }
