@@ -17,7 +17,7 @@ export async function sendInquiryAction(formData: FormData) {
 
     const { data, error } = await resend.emails.send({
       from: "Casa Jirafa Inquiries <onboarding@resend.dev>", // Update this to verified sender domain when ready
-      to: ["hello@casajirafa.com"], // Must match your Resend account email until you verify a domain
+      to: ["jason@visualworksav.com"], // Update this back to hello@casajirafa.com once you verify a domain
       replyTo: email,
       subject: `New Booking Inquiry from ${name} (${checkin} to ${checkout})`,
       text: `
