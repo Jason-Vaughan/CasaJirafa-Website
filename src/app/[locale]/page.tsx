@@ -218,7 +218,7 @@ export default async function Home() {
       <Policies />
 
       {/* Booking / Contact */}
-      <BookingSection blockedDates={blockedDates} />
+      <BookingSection blockedDates={blockedDates} dict={dict.booking} />
     </div>
   );
 }

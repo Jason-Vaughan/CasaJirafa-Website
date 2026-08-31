@@ -57,12 +57,63 @@
       "months": "Navidad / Año Nuevo",
       "price": "$250",
       "unit": "/noche"
+    },
+    "discounts": {
+      "title": "Descuentos y Ofertas",
+      "saveMore": "Ahorra Más",
+      "weekly": {
+        "title": "Estancia Semanal",
+        "desc": "7+ noches",
+        "value": "Consultar descuento"
+      },
+      "monthly": {
+        "title": "Estancia Mensual",
+        "desc": "28+ noches",
+        "value": "Consultar descuento"
+      },
+      "lastMinute": {
+        "title": "Último Minuto",
+        "desc": "Dentro de 7 días",
+        "value": "Consultar descuento"
+      }
     }
   },
   "merch": {
     "title": "Lleva Casa Jirafa a Casa",
     "subtitle": "Mercancía exclusiva para nuestros huéspedes. Disponible para recogida local o envío mundial.",
-    "viewStore": "Ver Tienda Completa"
+    "viewStore": "Ver Tienda Completa",
+    "items": {
+      "tee": {
+        "name": "Camiseta Clásica con Logo",
+        "desc": "100% Algodón Orgánico",
+        "price": "$25",
+        "button": "Próximamente"
+      },
+      "mug": {
+        "name": "Taza de Café Matutino",
+        "desc": "Cerámica • 11oz",
+        "price": "$15",
+        "button": "Próximamente"
+      },
+      "tote": {
+        "name": "Bolsa de Playa Vallarta",
+        "desc": "Lona Pesada",
+        "price": "$30",
+        "button": "Próximamente"
+      },
+      "slippers": {
+        "name": "Pantuflas Casa",
+        "desc": "Confort Afelpado",
+        "price": "$20",
+        "button": "Próximamente"
+      },
+      "towel": {
+        "name": "Toalla de Playa de Lujo",
+        "desc": "Extragrande • 100% Algodón",
+        "price": "$35",
+        "button": "Próximamente"
+      }
+    }
   },
   "gallery": {
     "title": "Un Vistazo al Interior",
@@ -73,5 +124,135 @@
     "p1": "Jason es ingeniero multimedia profesional y músico. Rosie es maquilladora profesional y asesora de belleza. Disfrutamos viajar, la buena comida, buena música, gente divertida, el buceo y el senderismo.",
     "p2": "Aunque trabajamos en San Francisco, nos encanta Puerto Vallarta y venimos lo más posible. ¡Estaremos encantados de compartir nuestra experiencia y conocimiento de la zona para que aproveches tu visita al máximo!",
     "badge": "13 Años de Experiencia como Anfitriones"
+  },
+  "guidebookCTA": {
+    "title": "Descubre Nuestra Guía Exclusiva de PV",
+    "p1": "Hemos pasado años explorando Puerto Vallarta para crear la mejor guía digital para nuestros huéspedes. Desde los mejores puestos de tacos escondidos y cenas románticas frente al mar, hasta aventuras de un día y galerías de arte locales — compartimos todos nuestros favoritos personales para que puedas experimentar PV como un local.",
+    "p2": "¡Se actualiza a diario y es completamente gratis para que la explores incluso antes de reservar!",
+    "button": "Explorar la Guía"
+  },
+  "testimonials": {
+    "title": "Lo Que Dicen Nuestros Huéspedes",
+    "subtitle": "No te quedes solo con nuestra palabra. Esto es lo que a los visitantes recientes les encantó de su estadía en Casa Jirafa.",
+    "list": [
+      {
+        "quote": "Casa Jirafa era exactamente lo que estábamos buscando. Las vistas desde la azotea son increíbles, y el WiFi fue perfectamente estable para mis reuniones de trabajo remoto.",
+        "author": "Sarah M.",
+        "location": "San Francisco, CA"
+      },
+      {
+        "quote": "¡Jason y Rosie son unos anfitriones fantásticos! Nos dieron una enorme lista de recomendaciones locales que hicieron que nuestra primera vez en Puerto Vallarta fuera inolvidable.",
+        "author": "Michael B.",
+        "location": "Chicago, IL"
+      },
+      {
+        "quote": "Espacioso, limpio y justo en el corazón de El Centro. Nos encantó poder caminar hasta el Malecón cada noche para cenar, y tener la piscina fue un lugar tranquilo perfecto para relajarse y pasar el rato.",
+        "author": "Jessica T.",
+        "location": "Seattle, WA"
+      }
+    ]
+  },
+  "policies": {
+    "title": "Reglas de la Casa y Políticas",
+    "subtitle": "Todo lo que necesitas saber para asegurar una estadía cómoda y sin problemas para ti y nuestros vecinos.",
+    "atAGlance": {
+      "title": "Un Vistazo",
+      "checkin": {
+        "label": "Entrada:",
+        "value": "3:00 PM (Flexible)"
+      },
+      "checkout": {
+        "label": "Salida:",
+        "value": "Antes de las 11:00 AM"
+      },
+      "guests": {
+        "label": "Huéspedes:",
+        "value": "4 Máximo"
+      },
+      "pets": {
+        "label": "Mascotas:",
+        "value": "No permitidas"
+      },
+      "events": {
+        "label": "Eventos:",
+        "value": "No permitidos"
+      },
+      "smoking": {
+        "label": "Fumar:",
+        "value": "No fumar, vapear o cigarrillos electrónicos"
+      },
+      "quiet": {
+        "label": "Horas de Silencio:",
+        "value": "10:00 PM - 8:00 AM"
+      }
+    },
+    "additional": {
+      "title": "Información Adicional",
+      "rooftop": {
+        "label": "Azotea y Piscina:",
+        "value": "El acceso a la azotea está disponible hasta las 9:00 PM (no usar después de las 9 PM). Por favor, no saltar ni bucear en la piscina."
+      },
+      "neighborhood": {
+        "label": "Vecindario:",
+        "value": "Por favor, respeta a nuestros vecinos — este es un edificio residencial pequeño y boutique. No se permite fotografía o filmación comercial."
+      },
+      "manager": {
+        "label": "Gerente en el Sitio:",
+        "value": "Nuestra gerente, Lupe, te ayudará con las llaves y la información básica durante tu estadía."
+      },
+      "cleaning": {
+        "label": "Limpieza:",
+        "value": "Se proporciona servicio de limpieza semanal. Si deseas ajustar el horario, por favor coordina con anticipación. Las propinas son apreciadas."
+      },
+      "grill": {
+        "label": "Parrilla:",
+        "value": "La parrilla de gas detrás de la cocina está disponible para el uso de los huéspedes. La parrilla de carbón Smokey Joe no debe usarse en la propiedad."
+      },
+      "maintenance": {
+        "label": "Mantenimiento:",
+        "value": "Por favor, reporta cualquier daño o problema de inmediato para que podamos solucionarlo rápidamente."
+      },
+      "checkout": {
+        "label": "Salida:",
+        "value": "Por favor, coloca toda la basura en el bote de basura ubicado en el garaje antes de la salida."
+      }
+    }
+  },
+  "booking": {
+    "title": "¿Listo para reservar tu estadía?",
+    "subtitle": "Revisa nuestro calendario en vivo a continuación para ver la disponibilidad. Selecciona tus fechas en el calendario y las completaremos automáticamente en tu consulta.",
+    "formTitle": "Enviar una Consulta",
+    "labels": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "checkin": "Entrada",
+      "checkout": "Salida",
+      "message": "Mensaje"
+    },
+    "placeholders": {
+      "message": "¿Alguna petición especial o pregunta?"
+    },
+    "button": {
+      "idle": "Enviar Consulta",
+      "sending": "Enviando..."
+    },
+    "messages": {
+      "success": "¡Gracias por tu consulta! Nos pondremos en contacto contigo pronto.",
+      "error": "Error al enviar: ",
+      "unexpected": "Ocurrió un error inesperado. Por favor, inténtalo de nuevo.",
+      "noDates": "¡Por favor, selecciona tus fechas deseadas en el calendario primero!"
+    }
+  },
+  "footer": {
+    "brand": "Casa Jirafa",
+    "description": "Tu cómodo condominio estilo mexicano en el corazón de El Centro, Puerto Vallarta.",
+    "planStay": "Planifica tu estadía",
+    "links": {
+      "condo": "El Condominio",
+      "guidebook": "Guía de Puerto Vallarta"
+    },
+    "book": "Reservar",
+    "checkAvailability": "Ver Disponibilidad y Reservar",
+    "rights": "Casa Jirafa. Todos los derechos reservados."
   }
 }

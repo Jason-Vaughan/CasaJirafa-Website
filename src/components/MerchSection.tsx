@@ -27,12 +27,12 @@ export default async function MerchSection() {
               <Image src="/casa-jirafa-logo.png" alt="Classic Logo Tee" width={200} height={200} className="w-48 h-48 object-contain transition-transform duration-300 group-hover:scale-110" />
             </div>
             <div className="flex flex-1 flex-col p-6 text-center">
-              <h3 className="text-lg font-semibold text-stone-900">Classic Logo Tee</h3>
-              <p className="mt-1 text-sm text-stone-500">100% Organic Cotton</p>
+              <h3 className="text-lg font-semibold text-stone-900">{dict.merch.items.tee.name}</h3>
+              <p className="mt-1 text-sm text-stone-500">{dict.merch.items.tee.desc}</p>
               <div className="mt-4 flex items-center justify-center gap-4">
-                <span className="text-lg font-bold text-[#c54b34]">$25</span>
+                <span className="text-lg font-bold text-[#c54b34]">{dict.merch.items.tee.price}</span>
                 <button className="rounded-full bg-stone-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-stone-800">
-                  Coming Soon
+                  {dict.merch.items.tee.button}
                 </button>
               </div>
             </div>
@@ -51,12 +51,12 @@ export default async function MerchSection() {
               </div>
             </div>
             <div className="flex flex-1 flex-col p-6 text-center">
-              <h3 className="text-lg font-semibold text-stone-900">Morning Coffee Mug</h3>
-              <p className="mt-1 text-sm text-stone-500">Ceramic • 11oz</p>
+              <h3 className="text-lg font-semibold text-stone-900">{dict.merch.items.mug.name}</h3>
+              <p className="mt-1 text-sm text-stone-500">{dict.merch.items.mug.desc}</p>
               <div className="mt-4 flex items-center justify-center gap-4">
-                <span className="text-lg font-bold text-[#c54b34]">$15</span>
+                <span className="text-lg font-bold text-[#c54b34]">{dict.merch.items.mug.price}</span>
                 <button className="rounded-full bg-stone-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-stone-800">
-                  Coming Soon
+                  {dict.merch.items.tee.button}
                 </button>
               </div>
             </div>
@@ -75,12 +75,12 @@ export default async function MerchSection() {
               </div>
             </div>
             <div className="flex flex-1 flex-col p-6 text-center">
-              <h3 className="text-lg font-semibold text-stone-900">Vallarta Beach Tote</h3>
-              <p className="mt-1 text-sm text-stone-500">Heavyweight Canvas</p>
+              <h3 className="text-lg font-semibold text-stone-900">{dict.merch.items.tote.name}</h3>
+              <p className="mt-1 text-sm text-stone-500">{dict.merch.items.tote.desc}</p>
               <div className="mt-4 flex items-center justify-center gap-4">
-                <span className="text-lg font-bold text-[#c54b34]">$30</span>
+                <span className="text-lg font-bold text-[#c54b34]">{dict.merch.items.tote.price}</span>
                 <button className="rounded-full bg-stone-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-stone-800">
-                  Coming Soon
+                  {dict.merch.items.tee.button}
                 </button>
               </div>
             </div>
@@ -102,12 +102,12 @@ export default async function MerchSection() {
               </div>
             </div>
             <div className="flex flex-1 flex-col p-6 text-center">
-              <h3 className="text-lg font-semibold text-stone-900">Casa Slippers</h3>
-              <p className="mt-1 text-sm text-stone-500">Plush Comfort</p>
+              <h3 className="text-lg font-semibold text-stone-900">{dict.merch.items.slippers.name}</h3>
+              <p className="mt-1 text-sm text-stone-500">{dict.merch.items.slippers.desc}</p>
               <div className="mt-4 flex items-center justify-center gap-4">
-                <span className="text-lg font-bold text-[#c54b34]">$20</span>
+                <span className="text-lg font-bold text-[#c54b34]">{dict.merch.items.slippers.price}</span>
                 <button className="rounded-full bg-stone-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-stone-800">
-                  Coming Soon
+                  {dict.merch.items.tee.button}
                 </button>
               </div>
             </div>
@@ -127,12 +127,12 @@ export default async function MerchSection() {
               </div>
             </div>
             <div className="flex flex-1 flex-col p-6 text-center">
-              <h3 className="text-lg font-semibold text-stone-900">Luxury Beach Towel</h3>
-              <p className="mt-1 text-sm text-stone-500">Oversized • 100% Cotton</p>
+              <h3 className="text-lg font-semibold text-stone-900">{dict.merch.items.towel.name}</h3>
+              <p className="mt-1 text-sm text-stone-500">{dict.merch.items.towel.desc}</p>
               <div className="mt-4 flex items-center justify-center gap-4">
-                <span className="text-lg font-bold text-[#c54b34]">$35</span>
+                <span className="text-lg font-bold text-[#c54b34]">{dict.merch.items.towel.price}</span>
                 <button className="rounded-full bg-stone-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-stone-800">
-                  Coming Soon
+                  {dict.merch.items.tee.button}
                 </button>
               </div>
             </div>

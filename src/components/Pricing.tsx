@@ -59,36 +59,36 @@ export default async function Pricing() {
           {/* Discounts & Offers Card */}
           <div className="rounded-2xl border border-stone-200 bg-white p-8 shadow-sm relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-[#c54b34]/10 text-[#c54b34] px-4 py-1 text-xs font-semibold rounded-bl-lg">
-              Save More
+              {dict.pricing.discounts.saveMore}
             </div>
-            <h3 className="text-xl font-semibold text-stone-900">Discounts & Offers</h3>
+            <h3 className="text-xl font-semibold text-stone-900">{dict.pricing.discounts.title}</h3>
             <table className="mt-6 w-full text-sm">
               <tbody>
                 <tr className="border-t border-stone-100">
                   <td className="py-4 text-stone-600">
-                    Weekly Stay <br />
-                    <span className="text-xs text-stone-400">7+ nights</span>
+                    {dict.pricing.discounts.weekly.title} <br />
+                    <span className="text-xs text-stone-400">{dict.pricing.discounts.weekly.desc}</span>
                   </td>
                   <td className="py-4 text-right font-medium text-stone-900">
-                    Inquire for discount
+                    {dict.pricing.discounts.weekly.value}
                   </td>
                 </tr>
                 <tr className="border-t border-stone-100">
                   <td className="py-4 text-stone-600">
-                    Monthly Stay <br />
-                    <span className="text-xs text-stone-400">28+ nights</span>
+                    {dict.pricing.discounts.monthly.title} <br />
+                    <span className="text-xs text-stone-400">{dict.pricing.discounts.monthly.desc}</span>
                   </td>
                   <td className="py-4 text-right font-medium text-stone-900">
-                    Inquire for discount
+                    {dict.pricing.discounts.monthly.value}
                   </td>
                 </tr>
                 <tr className="border-t border-stone-100">
                   <td className="py-4 text-stone-600">
-                    Last Minute <br />
-                    <span className="text-xs text-stone-400">Within 7 days</span>
+                    {dict.pricing.discounts.lastMinute.title} <br />
+                    <span className="text-xs text-stone-400">{dict.pricing.discounts.lastMinute.desc}</span>
                   </td>
                   <td className="py-4 text-right font-medium text-stone-900">
-                    Inquire for discount
+                    {dict.pricing.discounts.lastMinute.value}
                   </td>
                 </tr>
               </tbody>

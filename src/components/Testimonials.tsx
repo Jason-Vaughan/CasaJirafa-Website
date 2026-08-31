@@ -1,34 +1,21 @@
-export default function Testimonials() {
-  const testimonials = [
-    {
-      id: 1,
-      quote: "Casa Jirafa was exactly what we were looking for. The views from the rooftop are incredible, and the WiFi was perfectly stable for my remote work meetings.",
-      author: "Sarah M.",
-      location: "San Francisco, CA"
-    },
-    {
-      id: 2,
-      quote: "Jason and Rosie are fantastic hosts! They provided a massive list of local recommendations that made our first time in Puerto Vallarta unforgettable.",
-      author: "Michael B.",
-      location: "Chicago, IL"
-    },
-    {
-      id: 3,
-      quote: "Spacious, clean, and right in the heart of El Centro. We loved being able to walk down to the Malecón every evening for dinner, and having the pool was a perfect quiet place to relax and hang out.",
-      author: "Jessica T.",
-      location: "Seattle, WA"
-    }
-  ];
+import { cookies } from "next/headers";
+import { getDictionary, Locale } from "@/i18n/dictionaries";
+export default async function Testimonials() {
+  const cookieStore = await cookies();
+  const locale = (cookieStore.get('NEXT_LOCALE')?.value as Locale) || 'en';
+  const dict = await getDictionary(locale);
+
+  const testimonials = dict.testimonials.list.map((t: Record<string, string>, i: number) => ({ id: i + 1, ...t }));
 
   return (
     <section className="py-24 bg-white border-t border-stone-100">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
-            What Our Guests Say
+            {dict.testimonials.title}
           </h2>
           <p className="mt-4 text-lg text-stone-600">
-            Don&apos;t just take our word for it. Here is what recent visitors loved about their stay at Casa Jirafa.
+            {dict.testimonials.subtitle}
           </p>
         </div>
 

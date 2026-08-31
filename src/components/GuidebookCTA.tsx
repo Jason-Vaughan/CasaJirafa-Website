@@ -1,7 +1,13 @@
+import { cookies } from "next/headers";
+import { getDictionary, Locale } from "@/i18n/dictionaries";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function GuidebookCTA() {
+export default async function GuidebookCTA() {
+  const cookieStore = await cookies();
+  const locale = (cookieStore.get('NEXT_LOCALE')?.value as Locale) || 'en';
+  const dict = await getDictionary(locale);
+
   return (
     <section className="relative py-24 bg-[#c54b34] text-white overflow-hidden">
       {/* Clever Guidebook Logo Watermark */}
@@ -13,21 +19,19 @@ export default function GuidebookCTA() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Unlock Our Insider Guide to PV
+              {dict.guidebookCTA.title}
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-[#f9dcc4]">
-              We&apos;ve spent years exploring Puerto Vallarta to curate the ultimate digital guidebook for our guests. From the best hidden taco stands and romantic oceanfront dinners, to day-trip adventures and local art galleries—we share all our personal favorites so you can experience PV like a local.
+              {dict.guidebookCTA.p1}
             </p>
             <p className="mt-4 text-lg leading-relaxed text-[#f9dcc4]">
-              It&apos;s updated daily and completely free for you to explore before you even book!
+              {dict.guidebookCTA.p2}
             </p>
             <div className="mt-10">
               <Link
                 href="/guidebook"
                 className="rounded-full bg-white px-8 py-3.5 text-base font-semibold text-[#c54b34] shadow-sm hover:bg-stone-100 transition-all"
-              >
-                Explore the Guidebook
-              </Link>
+              >{dict.guidebookCTA.button}</Link>
             </div>
           </div>
           
