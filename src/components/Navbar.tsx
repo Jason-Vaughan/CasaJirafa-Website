@@ -20,13 +20,14 @@ export default async function Navbar() {
 
   const locale = (cookieStore.get('NEXT_LOCALE')?.value as Locale) || 'en';
   const dict = await getDictionary(locale);
+  const basePath = showTranslations ? `/${locale}` : '';
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-stone-200 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-center gap-3 z-10">
           <div className="flex flex-col">
-            <Link href="/" className="text-2xl font-semibold tracking-tight text-stone-900 leading-tight">
+            <Link href={`${basePath}/`} className="text-2xl font-semibold tracking-tight text-stone-900 leading-tight">
               {dict.navbar.title}
             </Link>
             <VersionTag />
@@ -36,19 +37,19 @@ export default async function Navbar() {
         
         {/* Desktop Nav */}
         <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-8">
-          <Link href="/#condo" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
+          <Link href={`${basePath}/#condo`} className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
             {dict.navbar.condo}
           </Link>
-          <Link href="/#location" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
+          <Link href={`${basePath}/#location`} className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
             {dict.navbar.location}
           </Link>
           {showRates && (
-            <Link href="/#pricing" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
+            <Link href={`${basePath}/#pricing`} className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
               {dict.navbar.rates}
             </Link>
           )}
           {showMerch && (
-            <Link href="/#merch" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
+            <Link href={`${basePath}/#merch`} className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
               {dict.navbar.merch}
             </Link>
           )}
@@ -61,7 +62,7 @@ export default async function Navbar() {
         <div className="hidden md:flex items-center gap-4 z-10">
           {showTranslations && <LanguageSwitcher />}
           <Link
-            href="/#book"
+            href={`${basePath}/#book`}
             className="rounded-full bg-stone-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-stone-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900 transition-all"
           >
             {dict.navbar.bookNow}
@@ -73,7 +74,7 @@ export default async function Navbar() {
           dict={dict} 
           showRates={showRates} 
           showMerch={showMerch} 
-          showTranslations={showTranslations} 
+          showTranslations={showTranslations} basePath={basePath} 
         />
       </div>
     </header>

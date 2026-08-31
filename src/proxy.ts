@@ -9,6 +9,7 @@ export function proxy(request: NextRequest) {
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
     pathname.startsWith('/images') ||
+    pathname.startsWith('/guidebook') ||
     pathname.includes('.')
   ) {
     return NextResponse.next();

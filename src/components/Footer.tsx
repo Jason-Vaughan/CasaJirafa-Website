@@ -4,8 +4,11 @@ import Link from "next/link";
 
 export default async function Footer() {
   const cookieStore = await cookies();
+  const translationsFlag = cookieStore.get('ff_translations')?.value;
+  const showTranslations = translationsFlag === '1';
   const locale = (cookieStore.get('NEXT_LOCALE')?.value as Locale) || 'en';
   const dict = await getDictionary(locale);
+  const basePath = showTranslations ? `/${locale}` : '';
 
   return (
     <footer className="border-t border-stone-200 bg-stone-50">
@@ -21,7 +24,7 @@ export default async function Footer() {
             <h4 className="font-semibold text-stone-900">{dict.footer.planStay}</h4>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
-                <Link href="/#condo" className="text-stone-600 hover:text-stone-900 transition-colors">
+                <Link href={`${basePath}/#condo`} className="text-stone-600 hover:text-stone-900 transition-colors">
                   {dict.footer.links.condo}
                 </Link>
               </li>
@@ -36,7 +39,7 @@ export default async function Footer() {
             <h4 className="font-semibold text-stone-900">{dict.footer.book}</h4>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
-                <Link href="/#book" className="font-medium text-stone-900 hover:underline">
+                <Link href={`${basePath}/#book`} className="font-medium text-stone-900 hover:underline">
                   {dict.footer.checkAvailability}
                 </Link>
               </li>

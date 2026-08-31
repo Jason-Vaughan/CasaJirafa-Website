@@ -9,9 +9,10 @@ interface MobileNavProps {
   showRates: boolean;
   showMerch: boolean;
   showTranslations: boolean;
+  basePath?: string;
 }
 
-export default function MobileNav({ dict, showRates, showMerch, showTranslations }: MobileNavProps) {
+export default function MobileNav({ dict, showRates, showMerch, showTranslations, basePath = "" }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -36,19 +37,19 @@ export default function MobileNav({ dict, showRates, showMerch, showTranslations
 
       {isOpen && (
         <div className="absolute top-[100%] left-0 w-full bg-white border-b border-stone-200 shadow-lg py-4 px-6 flex flex-col gap-4 z-40">
-          <Link href="/#condo" onClick={() => setIsOpen(false)} className="text-base font-medium text-stone-900">
+          <Link href={`${basePath}/#condo`} onClick={() => setIsOpen(false)} className="text-base font-medium text-stone-900">
             {dict.navbar.condo}
           </Link>
-          <Link href="/#location" onClick={() => setIsOpen(false)} className="text-base font-medium text-stone-900">
+          <Link href={`${basePath}/#location`} onClick={() => setIsOpen(false)} className="text-base font-medium text-stone-900">
             {dict.navbar.location}
           </Link>
           {showRates && (
-            <Link href="/#pricing" onClick={() => setIsOpen(false)} className="text-base font-medium text-stone-900">
+            <Link href={`${basePath}/#pricing`} onClick={() => setIsOpen(false)} className="text-base font-medium text-stone-900">
               {dict.navbar.rates}
             </Link>
           )}
           {showMerch && (
-            <Link href="/#merch" onClick={() => setIsOpen(false)} className="text-base font-medium text-stone-900">
+            <Link href={`${basePath}/#merch`} onClick={() => setIsOpen(false)} className="text-base font-medium text-stone-900">
               {dict.navbar.merch}
             </Link>
           )}
@@ -58,7 +59,7 @@ export default function MobileNav({ dict, showRates, showMerch, showTranslations
           
           <div className="pt-2 mt-2 border-t border-stone-100">
             <Link
-              href="/#book"
+              href={`${basePath}/#book`}
               onClick={() => setIsOpen(false)}
               className="inline-block rounded-full bg-stone-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm text-center w-full"
             >
