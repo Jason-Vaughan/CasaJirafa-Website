@@ -14,8 +14,8 @@ export default async function Navbar() {
   const merchFlag = cookieStore.get('ff_merch')?.value;
   const showMerch = merchFlag !== '0';
 
-  const i18nFlag = cookieStore.get('ff_i18n')?.value;
-  const showI18n = i18nFlag === '1';
+  const translationsFlag = cookieStore.get('ff_translations')?.value;
+  const showI18n = translationsFlag === '1';
 
   const locale = (cookieStore.get('NEXT_LOCALE')?.value as Locale) || 'en';
   const dict = await getDictionary(locale);

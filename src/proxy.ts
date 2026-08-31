@@ -14,13 +14,13 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const i18nFlag = request.cookies.get('ff_i18n')?.value;
+  const translationsFlag = request.cookies.get('ff_translations')?.value;
   const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value || 'en';
 
   const locales = ['en', 'es', 'fr'];
   const hasLocale = locales.some(loc => pathname.startsWith(`/${loc}/`) || pathname === `/${loc}`);
 
-  if (i18nFlag !== '1') {
+  if (translationsFlag !== '1') {
     // If flag is off, just rewrite the root path to /en internally so it works
     if (pathname === '/') {
       return NextResponse.rewrite(new URL('/en', request.url));
