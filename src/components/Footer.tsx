@@ -37,9 +37,12 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-12 border-t border-stone-200 pt-8 text-center">
-          <p className="text-xs text-stone-500">
+        <div className="mt-12 border-t border-stone-200 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-stone-500">
+          <p>
             &copy; {new Date().getFullYear()} Casa Jirafa. All rights reserved.
+          </p>
+          <p className="mt-4 md:mt-0 opacity-60">
+            v1.0.0 (build: {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA?.substring(0, 7) || 'dev'})
           </p>
         </div>
       </div>
