@@ -15,7 +15,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const baseUrl = 'https://stage.casajirafapv.com';
+const baseUrl = process.env.VERCEL_ENV === 'production' 
+  ? 'https://casajirafapv.com' 
+  : 'https://stage.casajirafapv.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
