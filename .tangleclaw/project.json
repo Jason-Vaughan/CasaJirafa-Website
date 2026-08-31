@@ -57,5 +57,12 @@
   "lintCommand": null,
   "lastWrapSha": null,
   "medusaEnabled": true,
-  "medusaWake": true
+  "medusaWake": true,
+  "startupRules": [
+    "Always use the Tailscale Magic DNS (http://cursatory.tail123678.ts.net:<port>) when providing local dev server links.",
+    "Before writing complex Next.js App Router code, check node_modules/next/dist/docs/ for breaking changes."
+  ],
+  "wrapRules": [
+    "Before wrapping a session, verify that all newly implemented logic and UI components have accompanying vitest unit tests to prevent future regressions."
+  ]
 }

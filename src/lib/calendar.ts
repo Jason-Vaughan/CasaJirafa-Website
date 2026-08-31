@@ -25,17 +25,19 @@ export async function getBlockedDates(): Promise<BlockedDateRange[]> {
       if (startMatch && endMatch) {
         const startStr = startMatch[1];
         const endStr = endMatch[1];
-        // Parse YYYYMMDD string to Date
-        const start = new Date(
+        // Parse YYYYMMDD string to Date at Noon UTC to prevent timezone shifting
+        const start = new Date(Date.UTC(
           parseInt(startStr.substring(0, 4)),
           parseInt(startStr.substring(4, 6)) - 1,
-          parseInt(startStr.substring(6, 8))
-        );
-        const end = new Date(
+          parseInt(startStr.substring(6, 8)),
+          12, 0, 0
+        ));
+        const end = new Date(Date.UTC(
           parseInt(endStr.substring(0, 4)),
           parseInt(endStr.substring(4, 6)) - 1,
-          parseInt(endStr.substring(6, 8))
-        );
+          parseInt(endStr.substring(6, 8)),
+          12, 0, 0
+        ));
         
         blockedRanges.push({ start, end });
       }

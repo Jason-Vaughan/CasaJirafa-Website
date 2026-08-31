@@ -12,16 +12,29 @@ interface CalendarProps {
 
 export default function AvailabilityCalendar({ blockedRanges, selectedRange, onSelectRange }: CalendarProps) {
   // Convert our {start, end} ranges to the {from, to} format react-day-picker expects
-  const disabledDates = blockedRanges.map((range) => ({
-    from: new Date(range.start),
-    to: new Date(range.end.getTime() - 24 * 60 * 60 * 1000), // Subtract 1 day because checkout day is bookable
-  }));
+  const disabledDates = (date: Date) => {
+    // Normalize the checked date to midnight
+    const checkDate = new Date(date);
+    checkDate.setHours(0, 0, 0, 0);
+    const checkTime = checkDate.getTime();
 
-  // Also disable past dates
-  disabledDates.push({
-    from: new Date(1970, 0, 1),
-    to: new Date(new Date().getTime() - 24 * 60 * 60 * 1000),
-  });
+    // Disable past dates
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    if (checkTime < today.getTime()) return true;
+
+    // Check against all blocked ranges
+    return blockedRanges.some((range) => {
+      const from = new Date(range.start);
+      from.setHours(0, 0, 0, 0);
+      
+      const to = new Date(range.end);
+      to.setDate(to.getDate() - 1); // Checkout day is bookable
+      to.setHours(0, 0, 0, 0);
+
+      return checkTime >= from.getTime() && checkTime <= to.getTime();
+    });
+  };
 
   return (
     <div className="bg-stone-800 p-4 rounded-xl inline-block shadow-lg mx-auto overflow-x-auto w-full max-w-full custom-calendar-wrapper">
