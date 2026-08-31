@@ -4,6 +4,7 @@ import { getBlockedDates } from "@/lib/calendar";
 import BookingSection from "@/components/BookingSection";
 import Testimonials from "@/components/Testimonials";
 import Policies from "@/components/Policies";
+import GuidebookCTA from "@/components/GuidebookCTA";
 
 export default async function Home() {
   const blockedDates = await getBlockedDates();
@@ -186,6 +187,9 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* Guidebook CTA */}
+      <GuidebookCTA />
 
       {/* Guest Reviews */}
       <Testimonials />
