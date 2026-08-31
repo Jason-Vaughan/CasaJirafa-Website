@@ -12,15 +12,19 @@ export async function getBlockedDates(): Promise<BlockedDateRange[]> {
 
     const blockedRanges: BlockedDateRange[] = [];
     
-    // Quick and simple regex to extract start and end dates from standard VEVENT blocks
-    const eventRegex = /BEGIN:VEVENT[\s\S]*?DTSTART(?:;VALUE=DATE)?:(\d{8})[\s\S]*?DTEND(?:;VALUE=DATE)?:(\d{8})[\s\S]*?END:VEVENT/g;
+    // Extract all VEVENT blocks
+    const veventRegex = /BEGIN:VEVENT([\s\S]*?)END:VEVENT/g;
     
     let match;
-    while ((match = eventRegex.exec(icalData)) !== null) {
-      const startStr = match[1];
-      const endStr = match[2];
-
-      if (startStr && endStr) {
+    while ((match = veventRegex.exec(icalData)) !== null) {
+      const block = match[1];
+      
+      const startMatch = block.match(/DTSTART(?:;VALUE=DATE)?:(\d{8})/);
+      const endMatch = block.match(/DTEND(?:;VALUE=DATE)?:(\d{8})/);
+      
+      if (startMatch && endMatch) {
+        const startStr = startMatch[1];
+        const endStr = endMatch[1];
         // Parse YYYYMMDD string to Date
         const start = new Date(
           parseInt(startStr.substring(0, 4)),
