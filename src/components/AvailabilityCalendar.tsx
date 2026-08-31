@@ -42,11 +42,11 @@ export default function AvailabilityCalendar({ blockedRanges, selectedRange, onS
           position: relative;
         }
 
-        /* Tooltip styles */
-        .rdp-day:not(.rdp-day_outside):hover::after {
+        /* Available Tooltip */
+        .rdp-day:not(.rdp-day_disabled):not(.rdp-day_outside):hover::after {
           content: 'Available';
           position: absolute;
-          bottom: 110%;
+          bottom: 100%;
           left: 50%;
           transform: translateX(-50%);
           background: #1c1917;
@@ -60,24 +60,48 @@ export default function AvailabilityCalendar({ blockedRanges, selectedRange, onS
           box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
         
+        /* Not Available Tooltip */
         .rdp-day_disabled:not(.rdp-day_outside):hover::after {
           content: 'Not Available';
+          position: absolute;
+          bottom: 100%;
+          left: 50%;
+          transform: translateX(-50%);
           background: #7f1d1d;
+          color: #fff;
+          padding: 4px 8px;
+          border-radius: 4px;
+          font-size: 12px;
+          white-space: nowrap;
+          pointer-events: none;
+          z-index: 50;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
 
-        /* X marks for disabled days */
+        /* X marks for disabled days (using pseudo-element instead of background) */
         .rdp-day_disabled {
           color: #a8a29e !important;
           opacity: 1 !important;
-          background-image: 
-            linear-gradient(to top right, transparent calc(50% - 1px), #c54b34 calc(50% - 1px), #c54b34 calc(50% + 1px), transparent calc(50% + 1px)),
-            linear-gradient(to bottom right, transparent calc(50% - 1px), #c54b34 calc(50% - 1px), #c54b34 calc(50% + 1px), transparent calc(50% + 1px)) !important;
         }
         
-        /* Clean up outside days so they don't look weird */
+        .rdp-day_disabled:not(.rdp-day_outside)::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 15%;
+          width: 70%;
+          height: 2px;
+          background-color: #c54b34;
+          transform: translateY(-50%) rotate(-45deg);
+          pointer-events: none;
+        }
+
+        /* Clean up outside days */
         .rdp-day_outside {
-          background-image: none !important;
-          opacity: 0.3 !important;
+          opacity: 0.2 !important;
+        }
+        .rdp-day_outside::before {
+          display: none !important;
         }
 
         @media (max-width: 768px) {
