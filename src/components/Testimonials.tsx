@@ -14,7 +14,7 @@ export default function Testimonials() {
     },
     {
       id: 3,
-      quote: "Spacious, clean, and right in the heart of El Centro. We loved being able to walk down to the Malecón every evening for dinner.",
+      quote: "Spacious, clean, and right in the heart of El Centro. We loved being able to walk down to the Malecón every evening for dinner, and having the pool was a perfect quiet place to relax and hang out.",
       author: "Jessica T.",
       location: "Seattle, WA"
     }
