@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getBlockedDates } from "@/lib/calendar";
 import BookingSection from "@/components/BookingSection";
+import Testimonials from "@/components/Testimonials";
 
 export default async function Home() {
   const blockedDates = await getBlockedDates();
@@ -184,6 +185,9 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* Guest Reviews */}
+      <Testimonials />
 
       {/* Booking / Contact */}
       <BookingSection blockedDates={blockedDates} />
