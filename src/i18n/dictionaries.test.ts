@@ -23,7 +23,7 @@ describe('i18n Dictionaries', () => {
 
   it('should fallback to English for unknown locale', async () => {
     // We cast to any to simulate invalid input at runtime
-    const dict = await getDictionary('de' as any);
+    const dict = await getDictionary('de' as unknown as "en");
     expect(dict.hosts.title).toBe('Meet Your Hosts');
   });
 });
