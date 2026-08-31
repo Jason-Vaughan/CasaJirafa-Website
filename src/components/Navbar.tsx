@@ -8,6 +8,9 @@ export default function Navbar() {
           <Link href="/" className="text-2xl font-semibold tracking-tight text-stone-900">
             Casa Jirafa
           </Link>
+          <span className="ml-3 text-[10px] font-mono text-stone-500 bg-stone-100 px-2 py-0.5 rounded-full border border-stone-200">
+            v1.0.0 ({process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA?.substring(0, 7) || 'dev'})
+          </span>
         </div>
         <nav className="hidden space-x-8 md:flex">
           <Link href="/#condo" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
