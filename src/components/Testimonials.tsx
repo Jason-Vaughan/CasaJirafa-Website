@@ -5,7 +5,7 @@ export default async function Testimonials() {
   const locale = (cookieStore.get('NEXT_LOCALE')?.value as Locale) || 'en';
   const dict = await getDictionary(locale);
 
-  const testimonials = dict.testimonials.list.map((t: Record<string, string>, i: number) => ({ id: i + 1, ...t }));
+  const testimonials = dict.testimonials.list.map((t: { quote: string; author: string; location: string }, i: number) => ({ id: i + 1, quote: t.quote, author: t.author, location: t.location }));
 
   return (
     <section className="py-24 bg-white border-t border-stone-100">
