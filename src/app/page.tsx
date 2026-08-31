@@ -36,6 +36,12 @@ export default async function Home() {
               Book Direct & Save
             </Link>
             <Link
+              href="#book"
+              className="rounded-full bg-stone-900/80 backdrop-blur-sm text-white px-8 py-3.5 text-base font-semibold shadow-sm hover:bg-stone-900 transition-all border border-stone-700/50"
+            >
+              Check Availability
+            </Link>
+            <Link
               href="#condo"
               className="rounded-full border border-white/80 bg-black/20 backdrop-blur-sm px-8 py-3.5 text-base font-semibold text-white hover:bg-black/40 transition-all"
             >
