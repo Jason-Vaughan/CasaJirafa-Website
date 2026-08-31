@@ -23,6 +23,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: "Casa Jirafa | Puerto Vallarta Vacation Rental",
   description: "A comfortable Mexican-style condo in walkable El Centro, Puerto Vallarta. Ideal for longer stays and remote work.",
+  robots: process.env.VERCEL_ENV === 'production' ? { index: true, follow: true } : { index: false, follow: false },
+  alternates: {
+    languages: {
+      'en': '/en',
+      'es': '/es',
+      'fr': '/fr',
+    },
+  },
   openGraph: {
     title: "Casa Jirafa | Puerto Vallarta",
     description: "The perfect Vallarta retreat in the heart of El Centro.",
