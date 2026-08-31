@@ -10,8 +10,9 @@ to file paths — this maps the layout itself.
 
 ## Structure
 
-<!-- no top-level directories detected -->
+- `public/` — <!-- describe -->
+- `src/` — <!-- describe -->
 
 ## Shared directories / doc groups
 
-<!-- This project is not a member of any shared-doc group. -->
+_This project belongs to 1 shared-doc group. Membership is machine-local state, not project structure, so it is not published here — see the TangleClaw UI for this install's groups._
