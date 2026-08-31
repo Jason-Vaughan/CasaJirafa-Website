@@ -16,11 +16,11 @@ export default async function Home() {
   // Read feature flags
   const cookieStore = await cookies();
   const merchFlag = cookieStore.get('ff_merch')?.value;
-  // Default to true on staging, true on prod unless explicitly disabled (though we wouldn't ship it to prod if we didn't want it)
-  const showMerch = merchFlag !== '0';
+  // Feature flagged off by default for production
+  const showMerch = merchFlag === '1';
 
   const ratesFlag = cookieStore.get('ff_rates')?.value;
-  const showRates = ratesFlag !== '0';
+  const showRates = ratesFlag === '1';
 
   const locale = (cookieStore.get('NEXT_LOCALE')?.value as Locale) || 'en';
   const dict = await getDictionary(locale);
