@@ -29,9 +29,10 @@ export default async function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/guidebook" className="text-stone-600 hover:text-stone-900 transition-colors">
+                {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                <a href="/guidebook" className="text-stone-600 hover:text-stone-900 transition-colors">
                   {dict.footer.links.guidebook}
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
