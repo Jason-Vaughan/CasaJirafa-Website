@@ -1,6 +1,5 @@
 import { cookies } from "next/headers";
 import { getDictionary, Locale } from "@/i18n/dictionaries";
-import Link from "next/link";
 import Image from "next/image";
 
 export default async function GuidebookCTA() {
@@ -28,10 +27,11 @@ export default async function GuidebookCTA() {
               {dict.guidebookCTA.p2}
             </p>
             <div className="mt-10">
-              <Link
+              {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+              <a
                 href="/guidebook"
-                className="rounded-full bg-white px-8 py-3.5 text-base font-semibold text-[#c54b34] shadow-sm hover:bg-stone-100 transition-all"
-              >{dict.guidebookCTA.button}</Link>
+                className="inline-block rounded-full bg-white px-8 py-3.5 text-base font-semibold text-[#c54b34] shadow-sm hover:bg-stone-100 transition-all"
+              >{dict.guidebookCTA.button}</a>
             </div>
           </div>
           

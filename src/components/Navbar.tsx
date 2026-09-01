@@ -33,6 +33,7 @@ export default async function Navbar() {
           <Link href={`${basePath}/#location`} className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
             {dict.navbar.location}
           </Link>
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           <a href="/guidebook" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
             {dict.navbar.guidebook}
           </a>
