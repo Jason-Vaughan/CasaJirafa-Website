@@ -133,7 +133,7 @@ export default async function Home() {
             </div>
           </div>
           <div className="mt-12 text-center">
-            <Link href="/gallery" className="inline-block rounded-full bg-stone-200 px-6 py-3 text-sm font-semibold text-stone-900 hover:bg-stone-300 transition-colors">
+            <Link href={`/${locale}/gallery`} className="inline-block rounded-full bg-stone-200 px-6 py-3 text-sm font-semibold text-stone-900 hover:bg-stone-300 transition-colors">
               {dict.gallery.viewFull}
             </Link>
           </div>

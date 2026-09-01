@@ -117,7 +117,9 @@
   },
   "gallery": {
     "title": "A Glimpse Inside",
-    "viewFull": "View Full Gallery"
+    "viewFull": "View Full Gallery",
+    "fullGalleryTitle": "Full Gallery",
+    "fullGalleryDesc": "Explore every corner of Casa Jirafa, from the spacious bedrooms to the stunning rooftop views."
   },
   "hosts": {
     "title": "Meet Your Hosts",
