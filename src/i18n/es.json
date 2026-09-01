@@ -117,7 +117,9 @@
   },
   "gallery": {
     "title": "Un Vistazo al Interior",
-    "viewFull": "Ver Galería Completa"
+    "viewFull": "Ver Galería Completa",
+    "fullGalleryTitle": "Galería Completa",
+    "fullGalleryDesc": "Explora cada rincón de Casa Jirafa, desde las amplias habitaciones hasta las impresionantes vistas desde la azotea."
   },
   "hosts": {
     "title": "Conoce a tus Anfitriones",

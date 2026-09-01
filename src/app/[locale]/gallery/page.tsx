@@ -1,14 +1,16 @@
 import Image from "next/image";
 import { photos } from "@/lib/photos";
+import { getDictionary, Locale } from "@/i18n/dictionaries";
 
-export default function GalleryPage() {
+export default async function GalleryPage({ params: { locale } }: { params: { locale: string } }) {
+  const dict = await getDictionary(locale as Locale);
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-4xl font-bold tracking-tight text-stone-900 sm:text-6xl">Full Gallery</h2>
+          <h2 className="text-4xl font-bold tracking-tight text-stone-900 sm:text-6xl">{dict.gallery.fullGalleryTitle}</h2>
           <p className="mt-6 text-lg leading-8 text-stone-600">
-            Explore every corner of Casa Jirafa, from the spacious bedrooms to the stunning rooftop views.
+            {dict.gallery.fullGalleryDesc}
           </p>
         </div>
         <ul
