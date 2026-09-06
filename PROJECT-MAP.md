@@ -10,8 +10,8 @@ to file paths — this maps the layout itself.
 
 ## Structure
 
-- `public/` — <!-- describe -->
-- `src/` — <!-- describe -->
+- `public/` — Static assets, images, and fonts served directly by Next.js.
+- `src/` — Core application code including Next.js App Router pages, React components, and i18n dictionaries.
 
 ## Shared directories / doc groups
 

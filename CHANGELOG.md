@@ -4,6 +4,16 @@ All notable changes to CasaJirafa-Website are documented in this file.
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-09-06
+
+### Fixed
+- Relocated gallery page inside `[locale]` dynamic route to fix a 400 error in production.
+- Updated sitemap generation to output localized URLs (`/en/*`, `/es/*`, `/fr/*`) to prevent SEO regressions.
+- Replaced Next.js `<Link>` components with standard `<a>` tags for `/guidebook` external rewrites to fix CI build failures.
+
+### Internal
+- Synchronized TangleClaw global rules in `AGENTS.md` to reflect shared plan URLs and merge strategy policy updates.
+
 ## [0.2.0] - 2026-08-30
 
 ### Added

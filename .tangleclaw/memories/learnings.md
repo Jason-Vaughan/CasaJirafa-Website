@@ -8,3 +8,6 @@ iMessage link previews are extremely unforgiving. An OpenGraph image must be str
 
 ## 2026-08-30 — react-day-picker v9 DateRange Matching
 `react-day-picker` v9 exposes a `DateRange` matcher interface (`{from: Date, to: Date}`), but passing an array of `DateRange` objects into the `disabled` or `modifiers` prop can behave inconsistently across multiple rendered months. A foolproof anti-pattern-avoiding approach is to bypass its internal interval matching by passing a raw `(date: Date) => boolean` evaluation function.
+
+## 2026-09-06 — External Next.js Rewrite Links
+When linking to Next.js routes that are handled by an external rewrite (like `/guidebook` pointing to a separate Vercel deployment), you **cannot** use Next.js `<Link>` components. `<Link>` attempts an internal client-side JSON data fetch that will fail and crash the build. Use standard `<a href="...">` tags with `eslint-disable` for these links.
