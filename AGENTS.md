@@ -172,6 +172,11 @@ TangleClaw is the central port registry for every project on this machine — re
   registry now enforces this: claiming a port another project holds returns **409**, it does
   not silently take it.
 - **Release** a port once it's no longer needed (service stopped, teardown, cleanup).
+- **Declare `reach`** when the service is meant to be reachable beyond loopback. A service that
+  binds `127.0.0.1` is already stating its intent; `reach` is where another process can read it.
+  TangleClaw's Caddyfile divergence check cross-references it, so a proxy fronting a port whose
+  owner meant it to stay local is reported rather than silently accepted. A lease with no `reach`
+  is treated as `loopback` and never as permission to expose the port.
 
 ### Port Ranges Convention
 - **3100-3199**: TangleClaw infrastructure (ttyd, server) — do not use
@@ -193,9 +198,12 @@ GET /api/ports
 
 # Register a port. Pass "permanent": true to survive restarts (the default over
 # HTTP is false — an omitted flag gives you a non-permanent lease).
+# "reach" declares how far the service is MEANT to be reachable —
+# "loopback" (default) | "tailnet" | "lan". Omitting it means loopback on EVERY
+# write, renewals included, so restate a wider reach each time you re-register.
 # Returns 201 on success, or 409 if another project already holds the port.
 POST /api/ports/lease
-{ "port": 3200, "project": "my-project", "service": "dev-server", "permanent": true }
+{ "port": 3200, "project": "my-project", "service": "dev-server", "permanent": true, "reach": "loopback" }
 
 # Register a temporary port (expires after TTL unless heartbeated)
 POST /api/ports/lease
@@ -263,6 +271,7 @@ You can exchange messages with other TangleClaw sessions. TangleClaw already run
 | mark handled | `POST http://localhost:3102/api/sessions/CasaJirafa-Website/medusa/read` — `{"ids": ["<id>", ...]}`; they leave the inbox |
 | send (initiate or respond) | `POST http://localhost:3102/api/sessions/CasaJirafa-Website/medusa/send` — `{"to": "<workspace-id>", "message": "..."}` |
 | peers | `GET http://localhost:3102/api/sessions/CasaJirafa-Website/medusa/roster` |
+| why a peer has not picked up | `GET http://localhost:3102/api/sessions/CasaJirafa-Website/medusa/peers/<workspace-id>` — the wake monitor's latest reason code for a peer on this host, with its `meaning` (`local: false` for one it cannot see) |
 
 **The initiator closes an exchange**, so a message you do not answer leaves the sender blocked. Reply over the same channel rather than printing into your own pane — the sender cannot see your pane.
 

@@ -11,3 +11,6 @@ iMessage link previews are extremely unforgiving. An OpenGraph image must be str
 
 ## 2026-09-06 — External Next.js Rewrite Links
 When linking to Next.js routes that are handled by an external rewrite (like `/guidebook` pointing to a separate Vercel deployment), you **cannot** use Next.js `<Link>` components. `<Link>` attempts an internal client-side JSON data fetch that will fail and crash the build. Use standard `<a href="...">` tags with `eslint-disable` for these links.
+
+## 2026-09-16 — Next.js 16 Proxy Interceptions and Rewrites
+In Next.js 16, the `proxy.ts` (formerly `middleware.ts`) executes *before* `next.config.ts` rewrites. If you need to evaluate a cookie (like `NEXT_LOCALE`) on a route before passing it off to an external Vercel app via a rewrite, do *not* exclude the route in `proxy.ts`. Instead, handle the locale detection, issue a `NextResponse.redirect` to the localized path, and then let the localized path fall through `proxy.ts` using `NextResponse.next()`, where `next.config.ts` rewrites will correctly intercept it.
