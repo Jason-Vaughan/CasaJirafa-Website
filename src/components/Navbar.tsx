@@ -51,9 +51,10 @@ export default async function Navbar() {
               {dict.navbar.merch}
             </Link>
           )}
-          <Link href="/guidebook" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a href="/guidebook" className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">
             {dict.navbar.guidebook}
-          </Link>
+          </a>
         </nav>
         
         {/* Desktop Actions */}

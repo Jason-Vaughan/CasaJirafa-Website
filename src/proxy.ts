@@ -9,15 +9,33 @@ export function proxy(request: NextRequest) {
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
     pathname.startsWith('/images') ||
-    pathname.startsWith('/guidebook') ||
     pathname.includes('.')
   ) {
     return NextResponse.next();
   }
 
   const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value;
-
   const locales = ['en', 'es', 'fr'];
+
+  // Handle Guidebook localization natively
+  if (pathname.startsWith('/guidebook')) {
+    if (pathname === '/guidebook' || pathname === '/guidebook/') {
+      let locale = 'en';
+      if (cookieLocale && locales.includes(cookieLocale)) {
+        locale = cookieLocale;
+      } else {
+        const acceptLanguage = request.headers.get('accept-language');
+        if (acceptLanguage) {
+          const preferredLocales = acceptLanguage.split(',').map(lang => lang.split(';')[0].trim().split('-')[0].toLowerCase());
+          const match = preferredLocales.find(lang => locales.includes(lang));
+          if (match) locale = match;
+        }
+      }
+      return NextResponse.redirect(new URL(`/guidebook/${locale}`, request.url));
+    }
+    // Allow /guidebook/en etc to pass through to next.config.ts rewrites
+    return NextResponse.next();
+  }
   const hasLocale = locales.some(loc => pathname.startsWith(`/${loc}/`) || pathname === `/${loc}`);
 
   // Translations are shipped, always redirect to locale

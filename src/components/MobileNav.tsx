@@ -52,9 +52,10 @@ export default function MobileNav({ dict, showRates, showMerch, basePath = "" }:
               {dict.navbar.merch}
             </Link>
           )}
-          <Link href="/guidebook" onClick={() => setIsOpen(false)} className="text-base font-medium text-stone-900">
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a href="/guidebook" onClick={() => setIsOpen(false)} className="text-base font-medium text-stone-900">
             {dict.navbar.guidebook}
-          </Link>
+          </a>
           
           <div className="pt-2 mt-2 border-t border-stone-100">
             <Link
