@@ -4,6 +4,8 @@ All notable changes to CasaJirafa-Website are documented in this file.
 
 ## [Unreleased]
 
+## [0.2.2] - 2026-09-16
+
 ### Fixed
 - Replaced Next.js `<Link>` components with standard `<a>` tags in Navbar components to prevent client-side routing errors for `/guidebook`.
 - Updated `src/proxy.ts` to detect `/guidebook` routes and natively redirect to the correct localized path (e.g. `/guidebook/en`), fixing 404 errors when navigating to the external Guidebook Vercel app.

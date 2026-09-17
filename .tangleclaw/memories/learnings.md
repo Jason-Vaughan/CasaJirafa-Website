@@ -14,3 +14,6 @@ When linking to Next.js routes that are handled by an external rewrite (like `/g
 
 ## 2026-09-16 — Next.js 16 Proxy Interceptions and Rewrites
 In Next.js 16, the `proxy.ts` (formerly `middleware.ts`) executes *before* `next.config.ts` rewrites. If you need to evaluate a cookie (like `NEXT_LOCALE`) on a route before passing it off to an external Vercel app via a rewrite, do *not* exclude the route in `proxy.ts`. Instead, handle the locale detection, issue a `NextResponse.redirect` to the localized path, and then let the localized path fall through `proxy.ts` using `NextResponse.next()`, where `next.config.ts` rewrites will correctly intercept it.
+
+## 2026-09-16 — Next.js 16 middleware vs proxy
+Next.js 16 deprecated the `middleware.ts` file convention and replaced it with `proxy.ts`. If you see `proxy.ts` exporting a `proxy()` function, do not assume it is an error and revert it to `middleware.ts`. Next.js 16 dev server will emit a deprecation warning if `middleware.ts` is used, explicitly directing developers to migrate to `proxy.ts`.
