@@ -47,6 +47,8 @@ export const metadata: Metadata = {
 };
 
 import { cookies } from "next/headers";
+import { CSPostHogProvider, PostHogPageview } from "./providers";
+import { Suspense } from "react";
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const cookieStore = await cookies();
@@ -57,12 +59,17 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col text-stone-900 bg-white">
-        <Navbar />
-        <main className="flex-1 flex flex-col">{children}</main>
-        <Footer />
-        <Analytics />
-      </body>
+      <CSPostHogProvider>
+        <body className="min-h-full flex flex-col text-stone-900 bg-white">
+          <Suspense fallback={null}>
+            <PostHogPageview />
+          </Suspense>
+          <Navbar />
+          <main className="flex-1 flex flex-col">{children}</main>
+          <Footer />
+          <Analytics />
+        </body>
+      </CSPostHogProvider>
     </html>
   );
 }
